@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'monkc_Example' do
+  pod 'monkc', :path => '../'
+
+  target 'monkc_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
