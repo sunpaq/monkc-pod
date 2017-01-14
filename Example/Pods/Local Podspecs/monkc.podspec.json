@@ -1,0 +1,23 @@
+{
+  "name": "monkc",
+  "version": "0.1.0",
+  "summary": "Monk-C is a Objective-C like tiny programming language",
+  "description": "Monk-C is a Objective-C like tiny programming language",
+  "homepage": "https://github.com/sunpaq/monkc",
+  "license": {
+    "type": "BSD",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Sun YuLi": "sunpaq@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/sunpaq/monkc.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "monkc/Classes/**/*",
+  "public_header_files": "Pod/Classes/**/*.h"
+}

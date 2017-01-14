@@ -1,0 +1,6 @@
+framework module Pods_monkc_Example {
+  umbrella header "Pods-monkc_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
