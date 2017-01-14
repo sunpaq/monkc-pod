@@ -1,5 +1,5 @@
 PODS:
-  - monkc (0.1.0)
+  - monkc (1.0.0)
 
 DEPENDENCIES:
   - monkc (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  monkc: 515691b505ad80e86acf3dcc926dbf65a6df43f9
+  monkc: 7c406037ebffa981892a8df05d12be9586b1b183
 
 PODFILE CHECKSUM: a97f9cb10cd3bbe293ce5d9bc7b24a6149dc20fd
 
