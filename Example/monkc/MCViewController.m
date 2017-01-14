@@ -7,7 +7,7 @@
 //
 
 #import "MCViewController.h"
-#import <monkc/monkc-umbrella.h>
+#import "MCAppDelegate.h"
 
 @interface MCViewController ()
 
@@ -18,11 +18,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    
-    
-    
+}
+
+- (IBAction)onCompressButtonClicked:(id)sender
+{
+    if(self.inputText.text.length > 0) {
+        self.outputText.text = [MCAppDelegate compressString:self.inputText.text];
+    }
 }
 
 - (void)didReceiveMemoryWarning

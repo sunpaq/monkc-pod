@@ -10,4 +10,9 @@
 
 @interface MCViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *inputText;
+@property (weak, nonatomic) IBOutlet UITextView *outputText;
+
+- (IBAction)onCompressButtonClicked:(id)sender;
+
 @end

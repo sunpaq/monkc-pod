@@ -1,5 +1,5 @@
 /*
- Copyright (c) <2013-2016>, <Sun Yuli>
+ Copyright (c) <2013-2017>, <Sun Yuli>
  All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
@@ -278,11 +278,12 @@ typedef struct
  */
 
 static MCHashTableSize mc_hashtable_sizes[MCHashTableLevelCount] = {
-    901,
+    //901,
     1301,
     3101,
     13001,
-    31001
+    31001,
+    130001
 };
 
 MCInline MCHashTableSize get_tablesize(const MCHashTableLevel level)
@@ -489,17 +490,11 @@ void mc_unlock(volatile MCInt* lock_p);
  Key.h
  */
 
-MCInline int mc_compare_key(const char* dest, const char* src) {
+MCInline MCBool mc_compare_key(const char* dest, const char* src) {
     if (dest && src) {
-        if (dest[0]!=NUL && src[0]!=NUL) {
-            return strcmp(dest, src);
-        }else if (dest[0]==NUL && src[0]==NUL) {
-            return 0;
-        }else{
-            return 1;
-        }
+        return (strcmp(dest, src) == 0);
     }else{
-        return 1;
+        return false;
     }
 }
 
@@ -520,7 +515,8 @@ MCInline MCHash hash_content(const char *s) {
 MCInline MCHash hash(const char *s) {
     //avoid integer overflow
     //return ((MCHash)s & MCHashMask);
-    return ((MCHash)s);
+    //return ((MCHash)s);
+    return hash_content(s);
 }
 
 MCInline MCHashTableIndex firstHashIndex(MCHash nkey, MCHashTableSize slots) {
