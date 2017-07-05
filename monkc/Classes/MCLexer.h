@@ -32,12 +32,14 @@ typedef struct {
     MCTokenValue value;
 } MCToken;
 
+static const char  MCTab = '\t';
 static const char  MCWhiteSpace = ' ';
 static const char  MCNewLineN = '\n';
 static const char  MCNewLineR = '\r';
 
 #define MCCond_Digit(w)     (*w >= '0' && *w <= '9')
 #define MCCond_Alphabet(w)  (*w >= 'a' && *w <= 'z') || (*w >= 'A' && *w <= 'Z')
+#define MCCond_PathDiv(w)   (*w == '/' || *w =='\\')
 
 MCInline size_t MCLexerFill(char* const dest, const char* src)
 {
@@ -51,7 +53,7 @@ MCInline size_t MCLexerFill(char* const dest, const char* src)
 MCInline const char* trimWhiteSpace(const char** target_p)
 {
     const char* iter = *target_p;
-    while (*iter == MCWhiteSpace)
+    while (*iter == MCWhiteSpace || *iter == MCTab)
         iter++;
     *target_p = iter;//update remain
     return iter;
@@ -60,7 +62,7 @@ MCInline const char* trimWhiteSpace(const char** target_p)
 MCInline const char* trimWhiteSpaceNewline(const char** target_p)
 {
     const char* iter = *target_p;
-    while (*iter == MCWhiteSpace || *iter == MCNewLineN || *iter == MCNewLineR)
+    while (*iter == MCWhiteSpace || *iter == MCTab || *iter == MCNewLineN || *iter == MCNewLineR)
         iter++;
     *target_p = iter;//update remain
     return iter;
@@ -69,12 +71,14 @@ MCInline const char* trimWhiteSpaceNewline(const char** target_p)
 //Old Mac9 end of line sequence: \r
 //Unix OSX end of line sequence: \n
 //Windows  end of line sequence: \r\n
-MCInline MCBool isNewLine(const char* s)
+MCInline MCBool isNewLine(const char *s)
 {
-    if (*s == MCNewLineN) {
-        return true;
-    } else if (*s == MCNewLineR) { //Windows NewLine
-        return true;
+    if (s) {
+        if (*s == MCNewLineN) {
+            return true;
+        } else if (*s == MCNewLineR) { //Windows NewLine
+            return true;
+        }
     }
     return false;
 }
@@ -124,21 +128,11 @@ MCInline MCBool isIdentifier(const char* w)
 
 MCInline MCBool isFilename(const char* w)
 {
-    //must start with alphabet or underbar or number
-    if (MCCond_Alphabet(w) || MCCond_Digit(w) || *w == '_') {
-        w++;
-    }else{
-        return false;
+    //can start with any char except '\0'
+    if (w != NUL) {
+        return true;
     }
-    //can be end with alphabet or underbar or number
-    while (*w != NUL) {
-        if (MCCond_Alphabet(w) || MCCond_Digit(w) || *w == '_' || *w == '.' || *w == MCWhiteSpace) {
-            w++; continue;
-        } else {
-            return false;
-        }
-    }
-    return true;
+    return false;
 }
 
 MCInline MCBool isInteger(const char* n)
@@ -213,7 +207,6 @@ MCInline int getDate(const char* s, long* buff)
         //have digit
         digit[i] = NUL;
         buff[b++] = atoi(digit);
-        i = 0;
     }
     
     return b;
@@ -232,7 +225,13 @@ MCInline MCToken tokenize(const char* word)
     //don't change the order!
     if (isFloat(word) == true) {
         token.type = MCTokenFloat;
-        token.value.Double = atof(word);
+        double dval = atof(word);
+        if (dval != dval) {
+            //NaN
+            token.value.Double = 0.0f;
+        } else {
+            token.value.Double = atof(word);
+        }
     }
     else if (isInteger(word) == true) {
         token.type = MCTokenInteger;
@@ -242,13 +241,15 @@ MCInline MCToken tokenize(const char* word)
         token.type = MCTokenDate;
         getDate(word, token.value.Date);
     }
-    else if (isIdentifier(word) == true) {
-        token.type = MCTokenIdentifier;
-        MCLexerFill(token.value.Word, word);
-    }
     else if (isFilename(word) == true) {
-        token.type = MCTokenFilename;
-        MCLexerFill(token.value.Word, word);
+        if (isIdentifier(word) == true) {
+            token.type = MCTokenIdentifier;
+            MCLexerFill(token.value.Word, word);
+        }
+        else {
+            token.type = MCTokenFilename;
+            MCLexerFill(token.value.Word, word);
+        }
     }
     else if (strncmp("#", word, 1) == 0) {
         token.type = MCTokenComment;
@@ -258,9 +259,23 @@ MCInline MCToken tokenize(const char* word)
 
 MCInline const char* readNext(const char** target_p, char buff[], MCBool isUpdate)
 {
-    const char* str = trimWhiteSpaceNewline(target_p);//skip whitespace
+    const char* str = trimWhiteSpace(target_p);//skip whitespace
     int i = 0;
     while ( (*str != MCWhiteSpace) && !isNewLine(str) && (*str != NUL) ) {
+        buff[i++] = *str++;
+    }
+    buff[i] = NUL;
+    if (isUpdate) {
+        *target_p = str;//update remain
+    }
+    return buff;
+}
+
+MCInline const char* readNextInThisLine(const char** target_p, char buff[], MCBool isUpdate)
+{
+    const char* str = trimWhiteSpace(target_p);//skip whitespace
+    int i = 0;
+    while ( !isNewLine(str) && (*str != NUL) ) {
         buff[i++] = *str++;
     }
     buff[i] = NUL;
@@ -274,6 +289,11 @@ MCInline const char* readNext(const char** target_p, char buff[], MCBool isUpdat
 MCInline const char* nextWord(const char** target_p, char buff[])
 {
     return readNext(target_p, buff, true);
+}
+
+MCInline const char* nextWordsInThisLine(const char** target_p, char buff[])
+{
+    return readNextInThisLine(target_p, buff, true);
 }
 
 MCInline const char* peekNext(const char** target_p, char buff[])
