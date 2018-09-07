@@ -1,7 +1,51 @@
 #include "MCString.h"
 #include "MCMath.h"
 
-utility(MCString, size_t, replace, const char* str, const char* withstr, const char* instr, char (*buff)[])
+#include <limits.h>
+#ifndef LINE_MAX
+#define LINE_MAX 2048
+#endif
+
+static const char  MCTab = '\t';
+static const char  MCWhiteSpace = ' ';
+static const char  MCNewLineN = '\n';
+static const char  MCNewLineR = '\r';
+#define MCCond_PathDiv(w)   (*w == '/' || *w =='\\')
+
+//return remain string
+util(MCString, const char*, trimWhiteSpace, const char** target_p)
+{
+    const char* iter = *target_p;
+    while (*iter == MCWhiteSpace || *iter == MCTab)
+    iter++;
+    *target_p = iter;//update remain
+    return iter;
+}
+
+//Old Mac9 end of line sequence: \r
+//Unix OSX end of line sequence: \n
+//Windows  end of line sequence: \r\n
+util(MCString, MCBool, isNewLine, const char* s)
+{
+    if (s) {
+        if (*s == MCNewLineN) {
+            return true;
+        } else if (*s == MCNewLineR) { //Windows NewLine
+            return true;
+        }
+    }
+    return false;
+}
+
+util(MCString, MCBool, contains, const char* str, const char* instr)
+{
+    if (strstr(instr, str)) {
+        return true;
+    }
+    return false;
+}
+
+util(MCString, size_t, replace, const char* str, const char* withstr, const char* instr, char (*buff)[])
 {
     size_t count = strlen(str);
     size_t wcount = strlen(withstr);
@@ -25,27 +69,152 @@ utility(MCString, size_t, replace, const char* str, const char* withstr, const c
     return b;
 }
 
-utility(MCString, size_t, reverse, const char* str, char (*buff)[])
+util(MCString, size_t, reverse, const char* str, char *buff)
 {
     size_t count = strlen(str);
     char* c = (char*)&str[count-1];
     for (int i=0; i<count; i++) {
-        (*buff)[i] = *c;
+        buff[i] = *c;
         c--;
     }
-    (*buff)[count] = NUL;
-    
+    buff[count] = NUL;
     return count;
 }
 
-utility(MCString, const char*, baseFromPath, const char* path, char (*buff)[])
+util(MCString, const char*, percentEncode, const char* str, char *buff)
 {
-    char reversebuff[PATH_MAX];
-    size_t count = MCString_reverse(path, &reversebuff);
+    if (!str || !buff) {
+        return null;
+    }
+    char* iter = (char*)str; int b = 0;
+    while (*iter != NUL) {
+        //2
+             if (*iter == ' ') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '0'; }
+        else if (*iter == '!') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '1'; }
+        else if (*iter == '"') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '2'; }
+        else if (*iter == '#') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '3'; }
+        else if (*iter == '$') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '4'; }
+        else if (*iter == '%') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '5'; }
+        else if (*iter == '&') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '6'; }
+        else if (*iter =='\'') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '7'; }
+        else if (*iter == '(') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '8'; }
+        else if (*iter == ')') { buff[b++] = '%';buff[b++] = '2';buff[b++] = '9'; }
+        else if (*iter == '*') { buff[b++] = '%';buff[b++] = '2';buff[b++] = 'A'; }
+        else if (*iter == '+') { buff[b++] = '%';buff[b++] = '2';buff[b++] = 'B'; }
+        else if (*iter == ',') { buff[b++] = '%';buff[b++] = '2';buff[b++] = 'C'; }
+        else if (*iter == '-') { buff[b++] = '%';buff[b++] = '2';buff[b++] = 'D'; }
+        else if (*iter == '.') { buff[b++] = '%';buff[b++] = '2';buff[b++] = 'E'; }
+        else if (*iter == '/') { buff[b++] = '%';buff[b++] = '2';buff[b++] = 'F'; }
+        //3
+        else if (*iter == ':') { buff[b++] = '%';buff[b++] = '3';buff[b++] = 'A'; }
+        else if (*iter == ';') { buff[b++] = '%';buff[b++] = '3';buff[b++] = 'B'; }
+        else if (*iter == '<') { buff[b++] = '%';buff[b++] = '3';buff[b++] = 'C'; }
+        else if (*iter == '=') { buff[b++] = '%';buff[b++] = '3';buff[b++] = 'D'; }
+        else if (*iter == '>') { buff[b++] = '%';buff[b++] = '3';buff[b++] = 'E'; }
+        else if (*iter == '?') { buff[b++] = '%';buff[b++] = '3';buff[b++] = 'F'; }
+        //4
+        else if (*iter == '@') { buff[b++] = '%';buff[b++] = '4';buff[b++] = '0'; }
+        //5
+        else if (*iter == '[') { buff[b++] = '%';buff[b++] = '5';buff[b++] = 'B'; }
+        else if (*iter =='\\') { buff[b++] = '%';buff[b++] = '5';buff[b++] = 'C'; }
+        else if (*iter == ']') { buff[b++] = '%';buff[b++] = '5';buff[b++] = 'D'; }
+        else if (*iter == '^') { buff[b++] = '%';buff[b++] = '5';buff[b++] = 'E'; }
+        else if (*iter == '_') { buff[b++] = '%';buff[b++] = '5';buff[b++] = 'F'; }
+        //6
+        else if (*iter == '`') { buff[b++] = '%';buff[b++] = '6';buff[b++] = '0'; }
+        //7
+        else if (*iter == '{') { buff[b++] = '%';buff[b++] = '7';buff[b++] = 'B'; }
+        else if (*iter == '|') { buff[b++] = '%';buff[b++] = '7';buff[b++] = 'C'; }
+        else if (*iter == '}') { buff[b++] = '%';buff[b++] = '7';buff[b++] = 'D'; }
+        else if (*iter == '~') { buff[b++] = '%';buff[b++] = '7';buff[b++] = 'E'; }
+        
+        else {
+            buff[b++] = *iter;
+        }
+        iter++;
+    }
+
+    return buff;
+}
+
+util(MCString, const char*, percentDecode, const char* str, char *buff)
+{
+    if (!str || !buff) {
+        return null;
+    }
+    char* iter = (char*)str; int b = 0;
+    while (*iter != NUL) {
+        //debug_log("MCString_percentDecode: %s\n", iter);
+        if (*iter == '%') {
+            iter++;
+            if (*iter == '2') {
+                iter++;
+                     if (*iter == '0') { buff[b++] = ' '; iter++;}
+                else if (*iter == '1') { buff[b++] = '!'; iter++;}
+                else if (*iter == '2') { buff[b++] = '"'; iter++;}
+                else if (*iter == '3') { buff[b++] = '#'; iter++;}
+                else if (*iter == '4') { buff[b++] = '$'; iter++;}
+                else if (*iter == '5') { buff[b++] = '%'; iter++;}
+                else if (*iter == '6') { buff[b++] = '&'; iter++;}
+                else if (*iter == '7') { buff[b++] ='\''; iter++;}
+                else if (*iter == '8') { buff[b++] = '('; iter++;}
+                else if (*iter == '9') { buff[b++] = ')'; iter++;}
+                else if (*iter == 'A') { buff[b++] = '*'; iter++;}
+                else if (*iter == 'B') { buff[b++] = '+'; iter++;}
+                else if (*iter == 'C') { buff[b++] = ','; iter++;}
+                else if (*iter == 'D') { buff[b++] = '-'; iter++;}
+                else if (*iter == 'E') { buff[b++] = '.'; iter++;}
+            }
+            else if (*iter == '3') {
+                iter++;
+                     if (*iter == 'A') { buff[b++] = ':'; iter++;}
+                else if (*iter == 'B') { buff[b++] = ';'; iter++;}
+                else if (*iter == 'C') { buff[b++] = '<'; iter++;}
+                else if (*iter == 'D') { buff[b++] = '='; iter++;}
+                else if (*iter == 'E') { buff[b++] = '>'; iter++;}
+                else if (*iter == 'F') { buff[b++] = '?'; iter++;}
+            }
+            else if (*iter == '4') {
+                iter++;
+                if (*iter == '0') { buff[b++] = '@'; iter++; }
+            }
+            else if (*iter == '5') {
+                iter++;
+                if (*iter == 'B') { buff[b++] = '['; iter++; }
+                if (*iter == 'C') { buff[b++] ='\\'; iter++; }
+                if (*iter == 'D') { buff[b++] = ']'; iter++; }
+                if (*iter == 'E') { buff[b++] = '^'; iter++; }
+                if (*iter == 'F') { buff[b++] = '_'; iter++; }
+            }
+            else if (*iter == '6') {
+                iter++;
+                if (*iter == '0') { buff[b++] = '`'; iter++; }
+            }
+            else if (*iter == '7') {
+                iter++;
+                if (*iter == 'B') { buff[b++] = '{'; iter++; }
+                if (*iter == 'C') { buff[b++] = '|'; iter++; }
+                if (*iter == 'D') { buff[b++] = '}'; iter++; }
+                if (*iter == 'E') { buff[b++] = '~'; iter++; }
+            }
+        }
+        else {
+            buff[b++] = *iter;
+            iter++;
+        }
+    }
+    
+    return buff;
+}
+
+util(MCString, const char*, baseFromPath, const char* path, char (*buff)[])
+{
+    char reversebuff[PATH_MAX] = {0};
+    size_t count = MCString_reverse(path, reversebuff);
     
     char* head = &reversebuff[count-1];
     char* tail = &reversebuff[0];
-    while (*tail != '/') {
+    while (!MCCond_PathDiv(tail) && *head != NUL) {
         tail++;
     }
     
@@ -59,20 +228,22 @@ utility(MCString, const char*, baseFromPath, const char* path, char (*buff)[])
     return &(*buff)[0];
 }
 
-utility(MCString, const char*, filenameFromPath, const char* path, char (*buff)[])
+util(MCString, const char*, filenameFromPath, const char* path, char (*buff)[])
 {
-    char reversebuff[PATH_MAX];
-    MCString_reverse(path, &reversebuff);
+    MCString_trimWhiteSpace(&path);
+
+    char reversebuff[PATH_MAX] = {0};
+    MCString_reverse(path, reversebuff);
     
     char* head = &reversebuff[0];
     char* tail = &reversebuff[0];
-    while (*head != '/') {
+    while (!MCCond_PathDiv(head) && *head != NUL) {
         head++;
     }
     head--;
     
     int i=0;
-    while (head != tail) {
+    while (head != tail && i >= 0 && i < PATH_MAX) {
         (*buff)[i++] = *head;
         head--;
     }
@@ -81,36 +252,79 @@ utility(MCString, const char*, filenameFromPath, const char* path, char (*buff)[
     return &(*buff)[0];
 }
 
-utility(MCString, const char*, filenameTrimExtension, const char* name, char* buff)
+util(MCString, size_t, filenameTrimExtension, const char* name, char* buff)
 {
-    int i=0;
-    while (*name != '.' && *name != NUL) {
-        buff[i++] = *name;
-        name++;
-    }
-    buff[i] = NUL;
-    return buff;
-}
-
-utility(MCString, const char*, extensionFromFilename, const char* name, char (*buff)[])
-{
-    while (*name != '.' && *name != NUL) name++;
-    if (*name == NUL) {
-        return null;
-    }else{
-        name++;//skip dot
-        int i=0;
-        while (*name != NUL) {
-            (*buff)[i++] = *name;
-            name++;
+    MCString_trimWhiteSpace(&name);
+    char reversebuff[PATH_MAX] = {0};
+    MCString_reverse(name, reversebuff);
+    
+    char* head = &reversebuff[0];
+    char* tail = &reversebuff[0];
+    
+    while (1) {
+        if (*tail != '.' && *tail != NUL) {
+            tail++;
         }
-        (*buff)[i] = NUL;
-        
-        return &(*buff)[0];
+        if (*head != NUL) {
+            head++;
+        } else {
+            head--;//skip NUL
+            break;
+        }
+    }
+    //have extension
+    if (*tail == '.') {
+        tail++;
+        int i=0;
+        while (head != tail) {
+            buff[i++] = *head;
+            head--;
+        }
+        buff[i] = *head;//last char
+        buff[i+1] = NUL;
+        return i+1;
+    }
+    //no extension
+    else {
+        size_t len = sizeof(name);
+        strncpy(buff, name, len);
+        buff[len] = NUL;
+        return len;
     }
 }
 
-utility(MCString, const char*, concate, const char** strings, size_t count, char (*buff)[])
+util(MCString, size_t, extensionFromFilename, const char* name, char* basebuff, char* extbuff)
+{
+    MCString_trimWhiteSpace(&name);
+    int i=0, j=0;
+    while (name[i] != NUL && name[i] != NUL) {
+        if (name[i] == '.') {
+            j = i;
+        }
+        i++;
+    }
+    //no extension
+    if (j==0) {
+        strcpy(basebuff, name);
+        extbuff[0] = NUL;
+        return 0;
+    }
+    //have extension
+    else {
+        size_t b, e, x=0;
+        for (b=0; b<j; b++) {
+            basebuff[b] = name[b];
+        }
+        for (e=j+1; e<i; e++) {
+            extbuff[x++] = name[e];
+        }
+        basebuff[b] = NUL;
+        extbuff[x]  = NUL;
+        return e;
+    }
+}
+
+util(MCString, const char*, concate, const char** strings, size_t count, char (*buff)[])
 {
     strcpy(*buff, strings[0]);
     for (int i=1; i<count; i++) {
@@ -119,19 +333,19 @@ utility(MCString, const char*, concate, const char** strings, size_t count, char
     return *buff;
 }
 
-utility(MCString, const char*, concateWith, const char* sp, const char* path1, const char* path2, char (*buff)[])
+util(MCString, const char*, concateWith, const char* sp, const char* path1, const char* path2, char (*buff)[])
 {
     return MCString_concate((const char* []){
         path1, sp, path2
     }, 3, buff);
 }
 
-utility(MCString, const char*, concatePath, const char* path1, const char* path2, char (*buff)[])
+util(MCString, const char*, concatePath, const char* path1, const char* path2, char (*buff)[])
 {
     return MCString_concateWith("/", path1, path2, buff);
 }
 
-utility(MCString, const char*, compressToCharCount, const char* source, char* buff)
+util(MCString, const char*, compressToCharCount, const char* source, char* buff)
 {
     //assume buff is large enough
     if (source && buff) {
@@ -166,7 +380,7 @@ utility(MCString, const char*, compressToCharCount, const char* source, char* bu
     return buff;
 }
 
-utility(MCString, const char*, extractFromCharCount, const char* source, char* buff)
+util(MCString, const char*, extractFromCharCount, const char* source, char* buff)
 {
     if (source && buff) {
         int cur = 0; int count=0; char last = NUL;
@@ -219,7 +433,7 @@ static void permutationOf(char str[], int index)
     }
 }
 
-utility(MCString, void, printPermutationOf, char str[])
+util(MCString, void, printPermutationOf, char str[])
 {
     char buff[LINE_MAX];
     strcpy(buff, str);
@@ -240,13 +454,13 @@ oninit(MCString)
     }
 }
 
-method(MCString, void, bye, voida)
+fun(MCString, void, bye, voida)
 {
     //debug_log("MCString bye");
     free(obj->buff);
 }
 
-method(MCString, MCString*, initWithCString, const char* str)
+fun(MCString, MCString*, initWithCString, const char* str)
 {
     size_t len = strlen(str);
     if (len >= MCStringBlock) {
@@ -262,12 +476,12 @@ method(MCString, MCString*, initWithCString, const char* str)
 
 MCString* MCString_newWithCString(const char* cstr)
 {
-    return MCString_initWithCString(0, new(MCString), cstr);
+    return MCString_initWithCString(new(MCString), cstr);
 }
 
 MCString* MCString_newWithMCString(MCString* mcstr)
 {
-    return MCString_initWithCString(0, new(MCString), mcstr->buff);
+    return MCString_initWithCString(new(MCString), mcstr->buff);
 }
 
 MCString* MCString_newForHttp(char* cstr, int isHttps)
@@ -277,14 +491,14 @@ MCString* MCString_newForHttp(char* cstr, int isHttps)
         res = MCString_newWithCString("https://");
 	else
 		res = MCString_newWithCString("http://");
-    MCString_add(0, res, cstr);
+    MCString_add(res, cstr);
 	return res;
 }
 
 static char get_one_char()
 {
     char cf = NUL;
-    while(!isNewLine(&cf)) {
+    while(!MCString_isNewLine(&cf)) {
         cf = getchar();
     }//clear the buff
 	return cf;
@@ -294,19 +508,20 @@ static void get_chars_until_enter(char resultString[])
 {
 	char tc = NUL;
 	int i=0;
-	while(!isNewLine(&tc)){
+	while(!MCString_isNewLine(&tc)){
 		resultString[i]=tc;
 		i++;
 	}
 	resultString[i]=NUL;
 }
 
-method(MCString, void, add, char* str)
+fun(MCString, void, add, char* str)
 {
     if (MCStringBlock-obj->size < strlen(str)+1) {
         char* newbuff = malloc(sizeof(char) * (obj->size + MCStringBlock));
-        strncpy(newbuff, obj->buff, obj->size-1);
-        newbuff[obj->size-1]=NUL;
+        size_t len = obj->size-1;
+        strncpy(newbuff, obj->buff, len);
+        newbuff[len]=NUL;
         free(obj->buff);
         obj->buff = newbuff;
         obj->size = obj->size + MCStringBlock;
@@ -314,7 +529,7 @@ method(MCString, void, add, char* str)
     strncat(obj->buff, str, strlen(str));
 }
 
-method(MCString, void, print, MCBool withNewline)
+fun(MCString, void, print, MCBool withNewline)
 {
     if (withNewline)
         debug_log("%s\n", obj->buff);
@@ -322,13 +537,13 @@ method(MCString, void, print, MCBool withNewline)
         debug_log("%s", obj->buff);
 }
 
-method(MCString, const char*, toCString, char const buff[])
+fun(MCString, const char*, toCString, char const buff[])
 {
 	strcpy(cast(char*, buff), obj->buff);
 	return buff;
 }
 
-method(MCString, int, equalTo, MCString* stringToComp)
+fun(MCString, int, equalTo, MCString* stringToComp)
 {
 	int res;
 	res = strcmp(obj->buff, stringToComp->buff);
@@ -338,17 +553,17 @@ method(MCString, int, equalTo, MCString* stringToComp)
 		return 0;
 }
 
-method(MCString, char, getOneChar, voida)
+fun(MCString, char, getOneChar, voida)
 {
 	return get_one_char();
 }
 
-method(MCString, void, getCharsUntilEnter, char resultString[])
+fun(MCString, void, getCharsUntilEnter, char resultString[])
 {
 	get_chars_until_enter(resultString);
 }
 
-method(MCString, MCBool, startWith, const char* str)
+fun(MCString, MCBool, startWith, const char* str)
 {
     size_t len = strlen(str);
     if (len > obj->length) {
@@ -362,19 +577,19 @@ method(MCString, MCBool, startWith, const char* str)
     }
 }
 
-method(MCString, double, toDoubleValue, char** endptr)
+fun(MCString, double, toDoubleValue, char** endptr)
 {
     return strtod(obj->buff, endptr);
 }
 
-method(MCString, MCString*, copyCompressedString, voida)
+fun(MCString, MCString*, copyCompressedString, voida)
 {
     MCString* string = new(MCString);
     MCString_compressToCharCount(obj->buff, string->buff);
     return string;
 }
 
-method(MCString, MCString*, copyExtractedString, voida)
+fun(MCString, MCString*, copyExtractedString, voida)
 {
     MCString* string = new(MCString);
     MCString_extractFromCharCount(obj->buff, string->buff);
@@ -384,18 +599,18 @@ method(MCString, MCString*, copyExtractedString, voida)
 onload(MCString)
 {
     if (load(MCObject)) {
-        binding(MCString, MCString*, initWithCString, char* str);
-        binding(MCString, void, add, char* str);
-        binding(MCString, void, print, MCBool withNewline);
-        binding(MCString, char*, toCString, char const buff[]);
-        binding(MCString, int, equalTo, MCString* stringToComp);
-        binding(MCString, char, getOneChar);
-        binding(MCString, void, getCharsUntilEnter, char const resultString[]);
-        binding(MCString, void, bye);
-        binding(MCString, MCBool, startWith, const char* str);
-        binding(MCString, double, toDoubleValue, char** endptr);
-        binding(MCString, MCString*, copyCompressedString, voida);
-        binding(MCString, MCString*, copyExtractedString, voida);
+        bid(MCString, MCString*, initWithCString, char* str);
+        bid(MCString, void, add, char* str);
+        bid(MCString, void, print, MCBool withNewline);
+        bid(MCString, char*, toCString, char const buff[]);
+        bid(MCString, int, equalTo, MCString* stringToComp);
+        bid(MCString, char, getOneChar);
+        bid(MCString, void, getCharsUntilEnter, char const resultString[]);
+        bid(MCString, void, bye);
+        bid(MCString, MCBool, startWith, const char* str);
+        bid(MCString, double, toDoubleValue, char** endptr);
+        bid(MCString, MCString*, copyCompressedString, voida);
+        bid(MCString, MCString*, copyExtractedString, voida);
         return cla;
     }else{
         return null;

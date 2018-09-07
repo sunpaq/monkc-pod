@@ -23,16 +23,16 @@ oninit(MCSort)
     }
 }
 
-method(MCSort, void, bye, voida)
+fun(MCSort, void, bye, voida)
 {
     if (obj->array && obj->length > 0) {
         free(obj->array);
     }
 }
 
-method(MCSort, MCSort*, initWithArray, MCGeneric* array, size_t length)
+fun(MCSort, MCSort*, initWithArray, MCGeneric* array, size_t length)
 {
-    var(array) = (MCGeneric*)malloc(sizeof(int) * length);
+    var(array) = (MCGeneric*)malloc(sizeof(MCGeneric) * length);
     for (size_t i=0; i<length; i++) {
         obj->array[i] = array[i];
     }
@@ -42,7 +42,7 @@ method(MCSort, MCSort*, initWithArray, MCGeneric* array, size_t length)
     return obj;
 }
 
-function(void, swap, size_t a, size_t b)
+ifun(void, swap, size_t a, size_t b)
 {
     as(MCSort);
     if (a < b) {
@@ -52,12 +52,12 @@ function(void, swap, size_t a, size_t b)
     }
 }
 
-method(MCSort, void, insertionSort, voida)
+fun(MCSort, void, insertionSort, voida)
 {
     
 }
 
-function(void, quicksort, const size_t l, const size_t r)
+ifun(void, quicksort, const size_t l, const size_t r)
 {
     as(MCSort);
     if (l >= r || l > obj->length || r > obj->length) {
@@ -68,20 +68,20 @@ function(void, quicksort, const size_t l, const size_t r)
     size_t cur=l;
     for (size_t idx=l+1; idx<=r; idx++) {
         if (MCGenericCompare(obj->array[idx], pivot) < 0)
-            swap(0, obj, ++cur, idx);
+            swap(obj, ++cur, idx);
     }
     
-    swap(0, obj, l, cur);
-    quicksort(0, obj, l, cur-1);
-    quicksort(0, obj, cur+1, r);
+    swap(obj, l, cur);
+    quicksort(obj, l, cur-1);
+    quicksort(obj, cur+1, r);
 }
 
-method(MCSort, void, quickSort, voida)
+fun(MCSort, void, quickSort, voida)
 {
-    quicksort(0, obj, 0, var(length)-1);
+    quicksort(obj, 0, var(length)-1);
 }
 
-method(MCSort, void, printArray, voida)
+fun(MCSort, void, printArray, voida)
 {
     for (size_t i=0; i<obj->length; i++) {
         printf("element of array[%ld]=%.2f\n", i, obj->array[i].mcfloat);
@@ -91,11 +91,11 @@ method(MCSort, void, printArray, voida)
 onload(MCSort)
 {
     if (load(MCObject)) {
-        binding(MCSort, void, bye, voida);
-        binding(MCSort, MCSort*, initWithArray, MCGeneric* array, size_t length);
-        binding(MCSort, void, insertionSort, voida);
-        binding(MCSort, void, quickSort, voida);
-        binding(MCSort, void, printArray, voida);
+        bid(MCSort, void, bye, voida);
+        bid(MCSort, MCSort*, initWithArray, MCGeneric* array, size_t length);
+        bid(MCSort, void, insertionSort, voida);
+        bid(MCSort, void, quickSort, voida);
+        bid(MCSort, void, printArray, voida);
         return cla;
     }else{
         return null;

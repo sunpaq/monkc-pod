@@ -46,6 +46,8 @@ static int detectCycle(MCItem* A, MCItem** start) {
 oninit(MCItem)
 {
     if (init(MCObject)) {
+        var(value) = MCGenericVp(null);
+        var(object)   = null;
         var(prevItem) = null;
         var(nextItem) = null;
         return obj;
@@ -54,13 +56,25 @@ oninit(MCItem)
     }
 }
 
-method(MCItem, void, linkNextItem, MCItem* next)
+fun(MCItem, void, bye, voida)
+{
+    release(obj->object);
+}
+
+fun(MCItem, MCItem*, initWithContentObject, MCObject* content)
+{
+    var(object) = content;
+    retain(content);
+    return obj;
+}
+
+fun(MCItem, void, linkNextItem, MCItem* next)
 {
     var(nextItem) = next;
     next->prevItem = obj;
 }
 
-method(MCItem, void, linkPrevItem, MCItem* prev)
+fun(MCItem, void, linkPrevItem, MCItem* prev)
 {
     var(prevItem) = prev;
     prev->nextItem = obj;
@@ -69,12 +83,19 @@ method(MCItem, void, linkPrevItem, MCItem* prev)
 onload(MCItem)
 {
     if (load(MCObject)) {
-        binding(MCItem, void, linkNextItem, MCItem* next);
-        binding(MCItem, void, linkPrevItem, MCItem* prev);
+        bid(MCItem, void, bye, voida);
+        bid(MCItem, MCItem*, initWithContentObject, MCObject* content);
+        bid(MCItem, void, linkNextItem, MCItem* next);
+        bid(MCItem, void, linkPrevItem, MCItem* prev);
         return cla;
     }else{
         return null;
     }
+}
+
+util(MCItem, MCItem*, itemWithObject, MCObject* content)
+{
+    return MCItem_initWithContentObject(new(MCItem), content);
 }
 
 //MCLinkedList
@@ -100,7 +121,7 @@ compute(unsigned, getCount)
 compute(MCItem*, cycleStart)
 {
     as(MCLinkedList);
-    MCItem* start;
+    MCItem* start = null;
     detectCycle(obj->headItem, &start);
     if (start) {
         return start;
@@ -124,14 +145,14 @@ oninit(MCLinkedList)
     }
 }
 
-method(MCLinkedList, void, bye, voida)
+fun(MCLinkedList, void, bye, voida)
 {
     MCLinkedListForEach(obj,
         release(item);
     );
 }
 
-method(MCLinkedList, void, addItem, MCItem* item)
+fun(MCLinkedList, void, addItem, MCItem* item)
 {
     if (item != null) {
         var(countChanged) = true;
@@ -139,13 +160,13 @@ method(MCLinkedList, void, addItem, MCItem* item)
             var(tailItem) = item;
             var(headItem) = item;
         }else{
-            MCItem_linkNextItem(0, var(tailItem), item);
+            MCItem_linkNextItem(var(tailItem), item);
             var(tailItem) = item;
         }
     }
 }
 
-method(MCLinkedList, void, delItem, MCItem* item)
+fun(MCLinkedList, void, delItem, MCItem* item)
 {
     if (item != null) {
         var(countChanged) = true;
@@ -163,58 +184,126 @@ method(MCLinkedList, void, delItem, MCItem* item)
         else {
             MCItem* prev = item->prevItem;
             MCItem* next = item->nextItem;
-            MCItem_linkNextItem(0, prev, next);
+            MCItem_linkNextItem(prev, next);
             release(item);
         }
     }
 }
 
-method(MCLinkedList, void, insertAfterItem, MCItem* anchor, MCItem* item)
+fun(MCLinkedList, void, addAndRetainObject, MCObject* object)
+{
+    MCLinkedList_addItem(obj, MCItem_itemWithObject(object));
+}
+
+fun(MCLinkedList, void, pushItem, MCItem* item)
+{
+    MCLinkedList_addItem(obj, item);
+}
+
+fun(MCLinkedList, MCItem*, popItem, voida)
+{
+    if (cpt(count) > 0 && var(headItem)) {
+        MCLinkedList_delItem(obj, var(headItem));
+        return var(headItem);
+    }
+    return null;
+}
+
+fun(MCLinkedList, void, insertAfterItem, MCItem* anchor, MCItem* item)
 {
     if (anchor != null && item != null) {
         var(countChanged) = true;
         MCItem* next = anchor->nextItem;
-        MCItem_linkNextItem(0, anchor, item);
-        MCItem_linkNextItem(0, item, next);
+        MCItem_linkNextItem(anchor, item);
+        MCItem_linkNextItem(item, next);
     }
 }
 
-method(MCLinkedList, void, insertBeforeItem, MCItem* anchor, MCItem* item)
+fun(MCLinkedList, void, insertBeforeItem, MCItem* anchor, MCItem* item)
 {
     if (anchor != null && item != null) {
         var(countChanged) = true;
         MCItem* prev = anchor->prevItem;
-        MCItem_linkPrevItem(0, anchor, item);
-        MCItem_linkPrevItem(0, item, prev);
+        MCItem_linkPrevItem(anchor, item);
+        MCItem_linkPrevItem(item, prev);
     }
 }
 
-method(MCLinkedList, MCLinkedList*, connectList, MCLinkedList* otherlist)
+fun(MCLinkedList, MCLinkedList*, connectList, MCLinkedList* otherlist)
 {
     retain(otherlist);
-    MCItem_linkNextItem(0, var(tailItem), otherlist->headItem);
+    MCItem_linkNextItem(var(tailItem), otherlist->headItem);
     return obj;
 }
 
-method(MCLinkedList, void, forEach, mc_message callback, void* userdata)
+fun(MCLinkedList, void, forEach, mc_message callback, void* userdata)
 {
     MCItem* item = obj->headItem;
     while (item != null) {
-        _push_jump(callback, item, userdata);
+        _push_jump(response_to(callback.object, callback.message), item, userdata);
         item = item->nextItem;
     }
+}
+
+fun(MCLinkedList, MCItem*, itemAtIndex, int index)
+{
+    MCItem* item = obj->headItem;
+    int i = 0;
+    while (item != null) {
+        if (index == i) {
+            return item;
+        }
+        item = item->nextItem;
+        i++;
+    }
+    return null;
+}
+
+fun(MCLinkedList, void, replaceItemAtIndex, int index, MCItem* withitem)
+{
+    MCItem* item = MCLinkedList_itemAtIndex(obj, index);
+    if (item) {
+        withitem->prevItem = item->prevItem;
+        withitem->nextItem = item->nextItem;
+        release(item);
+    }
+}
+
+fun(MCLinkedList, void, addItemAtIndex, int index, MCItem* item)
+{
+    MCItem* iter = obj->headItem;
+    //build list until reach index
+    int i = 0;
+    while (i < index) {
+        if (iter) {
+            if (iter->nextItem == null) {
+                MCItem* item = new(MCItem);
+                MCLinkedList_pushItem(obj, item);
+            }
+            iter = iter->nextItem;
+        }
+        i++;
+    }
+    //replace the item at index
+    MCLinkedList_replaceItemAtIndex(obj, index, item);
 }
 
 onload(MCLinkedList)
 {
     if (load(MCObject)) {
-        binding(MCLinkedList, void, bye, voida);
-        binding(MCLinkedList, void, addItem, MCItem* item);
-        binding(MCLinkedList, void, delItem, MCItem* item);
-        binding(MCLinkedList, void, insertAfterItem, MCItem* anchor, MCItem* item);
-        binding(MCLinkedList, void, insertBeforeItem, MCItem* anchor, MCItem* item);
-        binding(MCLinkedList, MCLinkedList*, connectList, MCLinkedList* otherlist);
-        binding(MCLinkedList, void, forEach, mc_message callback, void* userdata);
+        bid(MCLinkedList, void, bye, voida);
+        bid(MCLinkedList, void, addItem, MCItem* item);
+        bid(MCLinkedList, void, delItem, MCItem* item);
+        bid(MCLinkedList, void, addAndRetainObject, MCObject* object);
+        bid(MCLinkedList, void, pushItem, MCItem* item);
+        bid(MCLinkedList, MCItem*, popItem, voida);
+        bid(MCLinkedList, void, insertAfterItem, MCItem* anchor, MCItem* item);
+        bid(MCLinkedList, void, insertBeforeItem, MCItem* anchor, MCItem* item);
+        bid(MCLinkedList, MCLinkedList*, connectList, MCLinkedList* otherlist);
+        bid(MCLinkedList, void, forEach, mc_message callback, void* userdata);
+        bid(MCLinkedList, MCItem*, itemAtIndex, int index);
+        bid(MCLinkedList, void, addItemAtIndex, int index, MCItem* item);
+        bid(MCLinkedList, void, replaceItemAtIndex, int index, MCItem* withitem);
         return cla;
     }else{
         return null;
