@@ -7,74 +7,85 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05B3C23FACCD4F102520AF1FB0D145DF /* monkc.c in Sources */ = {isa = PBXBuildFile; fileRef = 03F3CE949F42CBBF95EE5CA6F659DDA9 /* monkc.c */; };
-		07787C11382E52B08E7A901314E46422 /* MCSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E9FAC064E4DDC98D312DD2A39207E7 /* MCSort.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09DFB52395438A7D3D13054DD8E1FE3A /* MCArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C9D09381C1AD559224245B95FDAC1E9 /* MCArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C1D6B5293AEE4EB4D5B800602F9010C /* MCBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DABCB72F6DA3AD4EEF22246E1E787F3 /* MCBuffer.c */; };
-		0E4D80EE3C514486A1C9B634E8D30FAF /* MCGraph.c in Sources */ = {isa = PBXBuildFile; fileRef = ED2FE675894FADD4E25F7A392767C27E /* MCGraph.c */; };
-		1508937C6B0DB5436C986CA43262A75A /* MCGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = FD41268EED6976AD4577DCD2E15F26AA /* MCGeometry.c */; };
-		18BF8CD69B9953E2C32A331CB9498A0E /* Pods-monkc_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A73BEF04FE0600AD0F9C24FA942A7BF /* Pods-monkc_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		223EFF5519848888A5F57130A8D42947 /* MCClock.h in Headers */ = {isa = PBXBuildFile; fileRef = B1546276C524FE4D8BAF7DF4A2B71832 /* MCClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2460536C210AE96ACD5B4730E4575A6C /* MCTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 269A5B5590544660C3E24B7106A2FA11 /* MCTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		247703E7A480910717B74D11C4557994 /* MCGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = DF7496DD74A32D13C548FDDA4FDC8763 /* MCGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C6D4C8097BED228BDFD0EA7DD9CAD93 /* MCTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 7C970DB79B5B40B6D302F9BA55519FBB /* MCTree.c */; };
-		3020B649CB19009685D946EE7D9036CF /* MCSet.c in Sources */ = {isa = PBXBuildFile; fileRef = 8F53CCE5EA018C8DF034D25B1166FF07 /* MCSet.c */; };
-		346E46B2B698DECEC2EBA4A37CBF58AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		3A3251DBD6B26F3A9DF818A1FA1C56D8 /* MCSort.c in Sources */ = {isa = PBXBuildFile; fileRef = 2461A243A80AC79E830D3894045F3931 /* MCSort.c */; };
-		41ABAC27C3E725640F32F06739FB7A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		52EE6051659800E413B5B8DBD3558D83 /* MCArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 8308C5D58AF9732566AEFC6C8B60F0C6 /* MCArray.c */; };
-		5347A8760A2337EBF15D205F1D27BDA0 /* MCJNI.h in Headers */ = {isa = PBXBuildFile; fileRef = 932373F8EFC1B3180DF7715D7BD90DCD /* MCJNI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		55945B16F430B1B4A24472B05D4F5038 /* MCGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE6D97A125EF014DD2B076E33023694 /* MCGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57893747A52365614DC2E8A48BC24AA4 /* MCContext.h in Headers */ = {isa = PBXBuildFile; fileRef = FF5C8418EDE2BDF44F50DB9452EB4CC5 /* MCContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5CC0B37C0A3ACCB897F51DCA3B200540 /* MCBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A770B31584D8AA9989A1E7B744359C /* MCBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6939D951C3B897CDA1FEC883D2EAE8DE /* MCMath.h in Headers */ = {isa = PBXBuildFile; fileRef = B4C60603A8A2A1D87E881A41E18E298C /* MCMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E5A2FF20194711437927B9A4CD01BFA /* MCProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = 51E4621959F0C9753C29D3CABD499FCC /* MCProcess.c */; };
-		7B1697CFBA9581916BF71E6490271B7B /* MCBits.c in Sources */ = {isa = PBXBuildFile; fileRef = 8822EDD83C685E462F5F864A6C85AC98 /* MCBits.c */; };
-		82A5F6192741D0179991EC196147F64D /* MCUnitTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 62162BCE98561B79E35BA5D7C32B9E25 /* MCUnitTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		850EE63F60289052CACD0A1DDE3EC7CD /* MCThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 292553E77553DDD62ECADEBC2DF5AF20 /* MCThread.c */; };
-		93DDA454A09A9AD65823F37D0C451EC6 /* MCProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 33F9EDC0C4B31428EEB4D0C87FEE1A9B /* MCProcess.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		970632EC70C79BC507490AA31AEDE198 /* MCLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 90B9B55C6FEA58F870A84D1ABC0A09A6 /* MCLinkedList.c */; };
-		9A66494C16592CA9EDA9BE67D391D51F /* MCHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = CC71B7EC3808467C17DF0FF94582002A /* MCHeap.c */; };
-		9CAC79A4AA8D51CED6B8E10239FDCB1B /* MCContext.c in Sources */ = {isa = PBXBuildFile; fileRef = E5978FC4BC44A23038CD61085687F95A /* MCContext.c */; };
-		A5DD312300D372FD570F6D6F4A434214 /* MCBits.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6E6C41523165A2F8CA6DAE38D39880 /* MCBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A698E7DF25332B7B79FAB1D72F8E57C5 /* MCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB18D1D79F0BE711B84B75A0C571204 /* MCString.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6D08D7E095942337CA05345D0B7729B /* Pods-monkc_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7891E3DF4BDA99427DB042CCE56749B9 /* Pods-monkc_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA11B7BD3D7667AA81E68A5F6D20286B /* MCUnitTest.c in Sources */ = {isa = PBXBuildFile; fileRef = 38F458B7255D65176E6535A47AB7A80B /* MCUnitTest.c */; };
-		B0E21878237A6C05DEE5CA4F1D2A361D /* MCThread.h in Headers */ = {isa = PBXBuildFile; fileRef = CE0679904C0C3390E8343C5BC916AF23 /* MCThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B744495843DA6C9FE99E92922959D664 /* Pods-monkc_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B588FC46511C965320A4D4C6B7DCDEFC /* Pods-monkc_Example-dummy.m */; };
-		BC721E77682B1B0D57B0CB1F97184805 /* MCSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 555B565F3ABAC0D365CCC035791B5E7B /* MCSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BEC831CD2FC0C6A335C6AFDE70E10472 /* MCException.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1B26031385DCB8A49DEF14A4EDE31F /* MCException.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF38FD84A1CD70798FFBB1B94B17A562 /* MCArrayLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 82A66E14DB3BE7C3A83A0E06A7BBBA00 /* MCArrayLinkedList.c */; };
-		C0011B1C1BD822D66A00EBFDD62922B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		C0976FCC5F4C535D1FA68AF3B225E86E /* MCLinkedList.h in Headers */ = {isa = PBXBuildFile; fileRef = B935903DE66472E0BA3010BFDCA8F7C8 /* MCLinkedList.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C155B49D2DF4C93D06CE7C3D68D106AD /* MCMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 08D7D6AABF49756ABEA0C4AA2DC75449 /* MCMath.c */; };
-		C2628CC9ADD3255E03ADB54EFD53A1EF /* monkc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B10953AA22F968B71E72608F0ECA2 /* monkc-dummy.m */; };
-		C425E3BE9291516BA6C241F2582756E7 /* MCIO.c in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8925FBFA1294F20E858BFB1D1869E /* MCIO.c */; };
-		CA8BDEC5DC2903EDF8627B13A08DD547 /* MCHeap.h in Headers */ = {isa = PBXBuildFile; fileRef = 73940F59AAFB0D190F478DB15394E7E6 /* MCHeap.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CACD7D387FABC2F332E0C5B140193E73 /* MCArrayLinkedList.h in Headers */ = {isa = PBXBuildFile; fileRef = B2EF432442D561AF32EEC5359FE5FD10 /* MCArrayLinkedList.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CBFDCCE76B791719E464EF734A393BEE /* MCLexer.h in Headers */ = {isa = PBXBuildFile; fileRef = 01EDEEE25BE11E0E545637E0D29F1803 /* MCLexer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D079FEA02F280657552EAADD44377141 /* MCException.c in Sources */ = {isa = PBXBuildFile; fileRef = 95075DB639D9E65E12DF875B8D2D277D /* MCException.c */; };
-		D96661313935A20C7149A213E992E6A8 /* monkc.h in Headers */ = {isa = PBXBuildFile; fileRef = F40A269D8F4840C068D352966ED9960C /* monkc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E757C9B0D15A6158E59F074B9154A88A /* Pods-monkc_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C031FC150DE478072F1190E6484249 /* Pods-monkc_Tests-dummy.m */; };
-		EA05EA20A1BC878D3E95C63BC87A258F /* MCSocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D5967E55369F6572C475F65BBCC7DFD /* MCSocket.c */; };
-		F5BDE68283FE5D46ACE983DFD4E49F52 /* monkc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28B723BBBCE306A24FF79CAEC9068D57 /* monkc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F728A89467AD80113AA6246AC234CADE /* MCClock.c in Sources */ = {isa = PBXBuildFile; fileRef = 20B31C26F9883FE52F956C1016A76AF0 /* MCClock.c */; };
-		F7C15C4DE7479017EB7F29BC60D9665C /* MCIO.h in Headers */ = {isa = PBXBuildFile; fileRef = 86D81DC1F8C3532CCB1CAB2B072321AF /* MCIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9119B6B9FE191EEA91D1F40E47277BC /* MCString.c in Sources */ = {isa = PBXBuildFile; fileRef = B2642E7F582501A8BCD0F21E42B5DF41 /* MCString.c */; };
-		FBB3EB4A5E18F7DC0595D41411C366E8 /* MCSet.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF8ACA70984B5AFA8CAB5FCC677C088 /* MCSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		019CC459C33FAAE6C0DA61E8AD8C94AD /* MCLexer.h in Headers */ = {isa = PBXBuildFile; fileRef = DF374A07AD3AF9E50BB344175E0B984E /* MCLexer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		023F4D8E9C0CD54DA44AEA12043F2403 /* MCArrayList.h in Headers */ = {isa = PBXBuildFile; fileRef = EF6596288A065DCDCAA9B7BEC3F69886 /* MCArrayList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05B67C1B5B5BE2AA7ECB3344820C3256 /* MCSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 182695A50316A9CFFAB64EDDCEE7DD08 /* MCSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E48139C36B407B59852E0CC65B59EC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		121C6882EE917263D10C77B7BA7F52BF /* MCGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C62E210B049847B83EE2A8779FCB5B9 /* MCGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1835B5B8A12E8D9E8F95BE3EB8A425A5 /* MCGraph.c in Sources */ = {isa = PBXBuildFile; fileRef = EA3481FAF81E4494C80C31BFC13B7A28 /* MCGraph.c */; };
+		1DFD23D9405F063AEC28801290CC2A30 /* MCProcess.c in Sources */ = {isa = PBXBuildFile; fileRef = D11BF33E10D2DB98B76C1D59632F0824 /* MCProcess.c */; };
+		1E40668570E0657A47919123095E2F9F /* MCBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = EC22ED440D6EFC28665BD0D9747EE5F5 /* MCBuffer.c */; };
+		22D2D76F30658744B6D9F6EB27918D26 /* MCClock.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E0810C1D82C74237A8D5CA2B8F051E0 /* MCClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE82046CD8A4F57471C01DEAA096FFF /* monkc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B500E79EC470348CA4471C3AB8FE3DE9 /* monkc-dummy.m */; };
+		2E9CA2C6F0D356BBE3DCD686F956B80C /* MCIO.c in Sources */ = {isa = PBXBuildFile; fileRef = CBDBF26936533498231510AA400ED8CA /* MCIO.c */; };
+		390C2226BB4778FAD6AB9C4179D4AEB9 /* MCBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F416A1BC96314EBE5843FE44B2CBB919 /* MCBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E8F8C6AC01EB063DAAE20E1B53C3F3D /* MCHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = F147CCEFEF3BAC0AB257EED890D2449B /* MCHeap.c */; };
+		43306917B1867C5F460B949955678DD3 /* MCSort.c in Sources */ = {isa = PBXBuildFile; fileRef = 2356B1674DC9E97F4D377A5387A9119D /* MCSort.c */; };
+		440F41EEDD1F89FB7E3CA2D5858920BB /* MCGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D82B0A6EFEEEC869B1F9216587D9EDD /* MCGeometry.c */; };
+		4C29597FFE31DECAA052352C82CB771C /* MCString.c in Sources */ = {isa = PBXBuildFile; fileRef = 193FE70590D411A2A9E2917D771B86C7 /* MCString.c */; };
+		5C00DEBC5B9D6F8928982F591658A2D5 /* MCArrayList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA24DB45333CFCED7066D87545B8B6 /* MCArrayList.c */; };
+		605640B67CF02C8A4FC0C37A98BE16DF /* MCBits.c in Sources */ = {isa = PBXBuildFile; fileRef = DF631A8CD6F00717B0A27EEFBCC81E5A /* MCBits.c */; };
+		60FEC724ED55702B3B12324B16475EFA /* MCProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 760043F35851CB885384708BCACC17D8 /* MCProcess.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64703CD28F9CF3EB30FF2A5535501994 /* MCBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CB29D7A3CD17A10D0AE39C2E2FD0F5F /* MCBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BBFC04351CAA9A992BCD6473BA14B40 /* monkc_export.h in Headers */ = {isa = PBXBuildFile; fileRef = F901DA38239BB7E49CA398A27160E7D6 /* monkc_export.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FEC14297FE67B8C94781667A376DDA2 /* Pods-monkc_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A12C9FC34F0BA7340994AB0C1767D6A6 /* Pods-monkc_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FF6B9ACD0A6125CE250A1A442EDF0B6 /* monkc.c in Sources */ = {isa = PBXBuildFile; fileRef = 42788A2D527C137794F0760D3C474F2F /* monkc.c */; };
+		7E0415F90C4A06B2C1684C23C36B87CC /* MCHeap.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E2CB2033D5129B783536C6D43347D9 /* MCHeap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FE9256D6E7FA0BE70BDF11F69486FFA /* MCJNI.h in Headers */ = {isa = PBXBuildFile; fileRef = 7003C43C649A552E977EA345FE8A620A /* MCJNI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8356E59E7D1D62D863C4233DFCA5A8E0 /* MCIO.h in Headers */ = {isa = PBXBuildFile; fileRef = C869E2E511D351009C7A41A6336E5297 /* MCIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88B8802F60EA0B1F269791268B260CCB /* MCUnitTest.c in Sources */ = {isa = PBXBuildFile; fileRef = 51FFC12B518FD0E907EFE33FA8E1F1EF /* MCUnitTest.c */; };
+		8A6455CBCF588A33D2DB306D52E5AD5D /* MCTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CB1D619F0EB6B8A00892F6BE7162D6D /* MCTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AF845AE83176D8D8B5B519CFAE2EBAD /* monkc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E6785B62BF13D4C21BF055BA4B0B43A /* monkc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8DD584B6F8F7262473B756443B13FE78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		94DFF03A67F4AA882185B8B4F7EEE6F6 /* MCString.h in Headers */ = {isa = PBXBuildFile; fileRef = 9599099CEAF7FB504C4370234676EFD6 /* MCString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		970A383FD4200C852B0E665898185DF8 /* Pods-monkc_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54262188D318BA3C36C1CE75366E6A3C /* Pods-monkc_Tests-dummy.m */; };
+		9A3D98C31026064EFADF07D2E6DD70B9 /* MCArray.c in Sources */ = {isa = PBXBuildFile; fileRef = D3119C961F1DF02D6FBC5C1CF8E86898 /* MCArray.c */; };
+		9CEC1BE57705C714795A63C9F81DFE25 /* MCThread.h in Headers */ = {isa = PBXBuildFile; fileRef = E37097C582D97042CF5F537F9C738915 /* MCThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4C4B5ECD8195234DE84BD3BBB4613EE /* MCException.c in Sources */ = {isa = PBXBuildFile; fileRef = 6350B421AF89540A032AFF3FB90DFF44 /* MCException.c */; };
+		A6D08D7E095942337CA05345D0B7729B /* Pods-monkc_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC066F27DA8442BBE0CE18D43E0E56B5 /* Pods-monkc_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A958F3F911693B11DF9FE6893F1DC01E /* MCSet.h in Headers */ = {isa = PBXBuildFile; fileRef = B25AB19CAE42BCDB04DB9D0ADA462321 /* MCSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB851389C2885578FC14FD59D6659759 /* MCMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D77F8F456ABFDE3EF86A77F1D602900 /* MCMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD416822CD06407CA88A2EBDE1D324F8 /* MCSet.c in Sources */ = {isa = PBXBuildFile; fileRef = DDD06A718283C95E1608793DAD73E0F7 /* MCSet.c */; };
+		AD9DB6B65D82A7176DC26975B7E1BBBF /* MCThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 631742481B2C4505E145F0758963B70B /* MCThread.c */; };
+		B5EDE0DFEB411175A22BE8868B7A6B8B /* MCLinkedList.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BC7D7556CDD9A5C88D693F630214DE /* MCLinkedList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B61D89834F0F511EA55D3CA0006F9F11 /* MCArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3F08E1E58E5036E8F26FF74E07AAAE /* MCArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B744495843DA6C9FE99E92922959D664 /* Pods-monkc_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AF221B116719AA0EF3E1E8889BC33A /* Pods-monkc_Example-dummy.m */; };
+		C002D2745CA75912F384EA7BF95887DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C705333E4D81E3E3497B7124B45A35E3 /* MCSocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C543679870E0981636A4F8B2D79C9 /* MCSocket.c */; };
+		CB9382ABB50A82A64D4B21B8F70275D9 /* MCSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F8C05FFE169DF9274C536F93EA4A666 /* MCSort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC6A849F6A184CC4F71F17684B599E0E /* MCContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 7053279B1719017124AD33F51B9D8D15 /* MCContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0B864E2781C74E77F544E7C6D2BB60E /* monkc.h in Headers */ = {isa = PBXBuildFile; fileRef = 853FF62AA95C35153D1E40C1FDE9BC97 /* monkc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3C57EFAF97111382EB8EDABFC595402 /* MCLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 85CE14498E84FD7718602BCBD2053738 /* MCLinkedList.c */; };
+		DAFABD97FBB06ECC7B80FD3856ED6CFC /* MCException.h in Headers */ = {isa = PBXBuildFile; fileRef = D37648B79FA544C2355EB11652266066 /* MCException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC696B299AF552346515EAF020272B53 /* MCContext.c in Sources */ = {isa = PBXBuildFile; fileRef = ACA7498CCD9028267A1FB1B8886E7022 /* MCContext.c */; };
+		E9BA3D294F426BBED58F2FAE90FF9575 /* MCClock.c in Sources */ = {isa = PBXBuildFile; fileRef = 964CBE2668875237888EE4BD92537EC1 /* MCClock.c */; };
+		EEA5F93A1BA7AFC74B0775AE4617D6B8 /* MCMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D05C1A29FF5DCA9E49BAB8C5566AC8 /* MCMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF4690A8D8F432DB141BEAC17BB27D4B /* MCUnitTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CD13477D4846E044ABA21CA7090338D /* MCUnitTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0E7B5A87CB23B1CC5A66BB826A4E9A9 /* MCTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B46B1704A4C81E43B15AC46EB71177D /* MCTree.c */; };
+		FBCD7AA3645F66963EB95B2F4A099206 /* MCGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 7674F8D95CFEDDED9E1CB9B6851D39B1 /* MCGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE69662CD5F20C6087E86ABD4113600 /* MCMap.c in Sources */ = {isa = PBXBuildFile; fileRef = F9459D5F2C11F32A175A362F7B511976 /* MCMap.c */; };
+		FF19527445BFE9CFD956CF1A482B7258 /* MCMath.c in Sources */ = {isa = PBXBuildFile; fileRef = F6E7DF8CE80B3E16DEB452D47D74FFF4 /* MCMath.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B389B54CE738E7D889648BCDD8ABB65C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0908AC3891199051379C8D4CD16D19FA;
+			remoteInfo = "Pods-monkc_Example";
+		};
 		CB71765126852DC46641A9D4EC31F883 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 079A3F9EAE7CFD5AA4E35E6AC91CDA3A;
+			remoteGlobalIDString = 0A797900572D79D27D8BD7E3B0B13DBF;
 			remoteInfo = monkc;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		01EDEEE25BE11E0E545637E0D29F1803 /* MCLexer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MCLexer.h; sourceTree = "<group>"; };
 		03F3CE949F42CBBF95EE5CA6F659DDA9 /* monkc.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = monkc.c; sourceTree = "<group>"; };
 		07F6A27DC7260598AE01121DC94BEE7A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,14 +163,99 @@
 		FD531B73A0C911A84283FBF75D971965 /* monkc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = monkc.xcconfig; sourceTree = "<group>"; };
 		FF0EE67644924D9ADBC9527C14DF6431 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF5C8418EDE2BDF44F50DB9452EB4CC5 /* MCContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MCContext.h; sourceTree = "<group>"; };
+=======
+		0CA2C727A8AB426312891700590F09F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D77F8F456ABFDE3EF86A77F1D602900 /* MCMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCMap.h; path = monkc/Classes/MCMap.h; sourceTree = "<group>"; };
+		0FFA24DB45333CFCED7066D87545B8B6 /* MCArrayList.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCArrayList.c; path = monkc/Classes/MCArrayList.c; sourceTree = "<group>"; };
+		111DCF445EE4F11052AD86C5AFDF2982 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17902EA5046E031051F7F67175564199 /* Pods-monkc_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-monkc_Example.release.xcconfig"; sourceTree = "<group>"; };
+		182695A50316A9CFFAB64EDDCEE7DD08 /* MCSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCSocket.h; path = monkc/Classes/MCSocket.h; sourceTree = "<group>"; };
+		193FE70590D411A2A9E2917D771B86C7 /* MCString.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCString.c; path = monkc/Classes/MCString.c; sourceTree = "<group>"; };
+		1D82B0A6EFEEEC869B1F9216587D9EDD /* MCGeometry.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCGeometry.c; path = monkc/Classes/MCGeometry.c; sourceTree = "<group>"; };
+		1E0810C1D82C74237A8D5CA2B8F051E0 /* MCClock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCClock.h; path = monkc/Classes/MCClock.h; sourceTree = "<group>"; };
+		21C972CC73355C74F4563BD7C65AA78D /* monkc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = monkc.framework; path = monkc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2356B1674DC9E97F4D377A5387A9119D /* MCSort.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCSort.c; path = monkc/Classes/MCSort.c; sourceTree = "<group>"; };
+		26622E72B92F9F40B11496E3E524DA70 /* Pods-monkc_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-monkc_Tests-resources.sh"; sourceTree = "<group>"; };
+		2B46B1704A4C81E43B15AC46EB71177D /* MCTree.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCTree.c; path = monkc/Classes/MCTree.c; sourceTree = "<group>"; };
+		2B737406123B4E4F44F086CB7B893D23 /* Pods_monkc_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_monkc_Tests.framework; path = "Pods-monkc_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D0C543679870E0981636A4F8B2D79C9 /* MCSocket.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCSocket.c; path = monkc/Classes/MCSocket.c; sourceTree = "<group>"; };
+		2F8C05FFE169DF9274C536F93EA4A666 /* MCSort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCSort.h; path = monkc/Classes/MCSort.h; sourceTree = "<group>"; };
+		33AF70B6AE372296FF2B8AF552BFF302 /* Pods-monkc_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-monkc_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3ACA134D1A3D969ADD09C3536ABA2B21 /* Pods-monkc_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-monkc_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		3B3F08E1E58E5036E8F26FF74E07AAAE /* MCArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCArray.h; path = monkc/Classes/MCArray.h; sourceTree = "<group>"; };
+		42788A2D527C137794F0760D3C474F2F /* monkc.c */ = {isa = PBXFileReference; includeInIndex = 1; name = monkc.c; path = monkc/Classes/monkc.c; sourceTree = "<group>"; };
+		464645F9D52B14CB1F294869B1BF5140 /* Pods-monkc_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-monkc_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		4C62E210B049847B83EE2A8779FCB5B9 /* MCGraph.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCGraph.h; path = monkc/Classes/MCGraph.h; sourceTree = "<group>"; };
+		50A87D9EDEBB4B05CF1640E714578564 /* monkc.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = monkc.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		51FFC12B518FD0E907EFE33FA8E1F1EF /* MCUnitTest.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCUnitTest.c; path = monkc/Classes/MCUnitTest.c; sourceTree = "<group>"; };
+		54262188D318BA3C36C1CE75366E6A3C /* Pods-monkc_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-monkc_Tests-dummy.m"; sourceTree = "<group>"; };
+		543EB817956FDDE98CD5A14F1907D82B /* Pods-monkc_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-monkc_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		552C07A68BE052C89659996953DF2FBF /* Pods-monkc_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-monkc_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		58D05C1A29FF5DCA9E49BAB8C5566AC8 /* MCMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCMath.h; path = monkc/Classes/MCMath.h; sourceTree = "<group>"; };
+		5CB1D619F0EB6B8A00892F6BE7162D6D /* MCTree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCTree.h; path = monkc/Classes/MCTree.h; sourceTree = "<group>"; };
+		5CB29D7A3CD17A10D0AE39C2E2FD0F5F /* MCBits.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCBits.h; path = monkc/Classes/MCBits.h; sourceTree = "<group>"; };
+		5CD13477D4846E044ABA21CA7090338D /* MCUnitTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCUnitTest.h; path = monkc/Classes/MCUnitTest.h; sourceTree = "<group>"; };
+		631742481B2C4505E145F0758963B70B /* MCThread.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCThread.c; path = monkc/Classes/MCThread.c; sourceTree = "<group>"; };
+		6350B421AF89540A032AFF3FB90DFF44 /* MCException.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCException.c; path = monkc/Classes/MCException.c; sourceTree = "<group>"; };
+		63BC7D7556CDD9A5C88D693F630214DE /* MCLinkedList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCLinkedList.h; path = monkc/Classes/MCLinkedList.h; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		661992F8A2AF191426720CA91CC85CDA /* Pods-monkc_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-monkc_Tests.modulemap"; sourceTree = "<group>"; };
+		6E6785B62BF13D4C21BF055BA4B0B43A /* monkc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "monkc-umbrella.h"; sourceTree = "<group>"; };
+		7003C43C649A552E977EA345FE8A620A /* MCJNI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCJNI.h; path = monkc/Classes/MCJNI.h; sourceTree = "<group>"; };
+		7053279B1719017124AD33F51B9D8D15 /* MCContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCContext.h; path = monkc/Classes/MCContext.h; sourceTree = "<group>"; };
+		760043F35851CB885384708BCACC17D8 /* MCProcess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCProcess.h; path = monkc/Classes/MCProcess.h; sourceTree = "<group>"; };
+		7674F8D95CFEDDED9E1CB9B6851D39B1 /* MCGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCGeometry.h; path = monkc/Classes/MCGeometry.h; sourceTree = "<group>"; };
+		7A3564433DB7928F881F9C66B0BB825B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		853FF62AA95C35153D1E40C1FDE9BC97 /* monkc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = monkc.h; path = monkc/Classes/monkc.h; sourceTree = "<group>"; };
+		85CE14498E84FD7718602BCBD2053738 /* MCLinkedList.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCLinkedList.c; path = monkc/Classes/MCLinkedList.c; sourceTree = "<group>"; };
+		88122F38460088C3950DB28EB0DA2999 /* Pods_monkc_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_monkc_Example.framework; path = "Pods-monkc_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D916F0C21B70D1F1A3C3BE738925628 /* monkc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "monkc-prefix.pch"; sourceTree = "<group>"; };
+		916FA92DDBADEC87E5F619C6662317F9 /* Pods-monkc_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-monkc_Example.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9599099CEAF7FB504C4370234676EFD6 /* MCString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCString.h; path = monkc/Classes/MCString.h; sourceTree = "<group>"; };
+		964CBE2668875237888EE4BD92537EC1 /* MCClock.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCClock.c; path = monkc/Classes/MCClock.c; sourceTree = "<group>"; };
+		A12C9FC34F0BA7340994AB0C1767D6A6 /* Pods-monkc_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-monkc_Tests-umbrella.h"; sourceTree = "<group>"; };
+		AC066F27DA8442BBE0CE18D43E0E56B5 /* Pods-monkc_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-monkc_Example-umbrella.h"; sourceTree = "<group>"; };
+		AC1A4067204CEC144A008898F62F2A68 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		ACA7498CCD9028267A1FB1B8886E7022 /* MCContext.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCContext.c; path = monkc/Classes/MCContext.c; sourceTree = "<group>"; };
+		B25AB19CAE42BCDB04DB9D0ADA462321 /* MCSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCSet.h; path = monkc/Classes/MCSet.h; sourceTree = "<group>"; };
+		B500E79EC470348CA4471C3AB8FE3DE9 /* monkc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "monkc-dummy.m"; sourceTree = "<group>"; };
+		B51CE1E134F5D1B300ED6CAB415D1ED8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C027D16B34B0720C43830FFE84506F74 /* Pods-monkc_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-monkc_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C69EBA9F94C3DBD7B6E9D45F277E7147 /* Pods-monkc_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-monkc_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C77EFA544666AD28B1D8257E860E125B /* Pods-monkc_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-monkc_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		C869E2E511D351009C7A41A6336E5297 /* MCIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCIO.h; path = monkc/Classes/MCIO.h; sourceTree = "<group>"; };
+		CBDBF26936533498231510AA400ED8CA /* MCIO.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCIO.c; path = monkc/Classes/MCIO.c; sourceTree = "<group>"; };
+		D11BF33E10D2DB98B76C1D59632F0824 /* MCProcess.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCProcess.c; path = monkc/Classes/MCProcess.c; sourceTree = "<group>"; };
+		D3119C961F1DF02D6FBC5C1CF8E86898 /* MCArray.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCArray.c; path = monkc/Classes/MCArray.c; sourceTree = "<group>"; };
+		D37648B79FA544C2355EB11652266066 /* MCException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCException.h; path = monkc/Classes/MCException.h; sourceTree = "<group>"; };
+		D4F1CC8479C77A23C1833FD6D09FA380 /* monkc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = monkc.modulemap; sourceTree = "<group>"; };
+		D8AF221B116719AA0EF3E1E8889BC33A /* Pods-monkc_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-monkc_Example-dummy.m"; sourceTree = "<group>"; };
+		DDD06A718283C95E1608793DAD73E0F7 /* MCSet.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCSet.c; path = monkc/Classes/MCSet.c; sourceTree = "<group>"; };
+		DF374A07AD3AF9E50BB344175E0B984E /* MCLexer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCLexer.h; path = monkc/Classes/MCLexer.h; sourceTree = "<group>"; };
+		DF631A8CD6F00717B0A27EEFBCC81E5A /* MCBits.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCBits.c; path = monkc/Classes/MCBits.c; sourceTree = "<group>"; };
+		DF708E0E054265278589CD89D28A64BE /* monkc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = monkc.xcconfig; sourceTree = "<group>"; };
+		E37097C582D97042CF5F537F9C738915 /* MCThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCThread.h; path = monkc/Classes/MCThread.h; sourceTree = "<group>"; };
+		EA3481FAF81E4494C80C31BFC13B7A28 /* MCGraph.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCGraph.c; path = monkc/Classes/MCGraph.c; sourceTree = "<group>"; };
+		EC22ED440D6EFC28665BD0D9747EE5F5 /* MCBuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCBuffer.c; path = monkc/Classes/MCBuffer.c; sourceTree = "<group>"; };
+		EF6596288A065DCDCAA9B7BEC3F69886 /* MCArrayList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCArrayList.h; path = monkc/Classes/MCArrayList.h; sourceTree = "<group>"; };
+		F147CCEFEF3BAC0AB257EED890D2449B /* MCHeap.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCHeap.c; path = monkc/Classes/MCHeap.c; sourceTree = "<group>"; };
+		F37B49AE4F3E10FA192218CC9E6523CE /* Pods-monkc_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-monkc_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F3CE9CB13E3CE20CB22EF160B54FA479 /* Pods-monkc_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-monkc_Example-resources.sh"; sourceTree = "<group>"; };
+		F416A1BC96314EBE5843FE44B2CBB919 /* MCBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCBuffer.h; path = monkc/Classes/MCBuffer.h; sourceTree = "<group>"; };
+		F5E2CB2033D5129B783536C6D43347D9 /* MCHeap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MCHeap.h; path = monkc/Classes/MCHeap.h; sourceTree = "<group>"; };
+		F6E7DF8CE80B3E16DEB452D47D74FFF4 /* MCMath.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCMath.c; path = monkc/Classes/MCMath.c; sourceTree = "<group>"; };
+		F901DA38239BB7E49CA398A27160E7D6 /* monkc_export.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = monkc_export.h; path = monkc/Classes/monkc_export.h; sourceTree = "<group>"; };
+		F9459D5F2C11F32A175A362F7B511976 /* MCMap.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MCMap.c; path = monkc/Classes/MCMap.c; sourceTree = "<group>"; };
+>>>>>>> release/2.0
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		69B676B54875CAE4EFDC71C033C41562 /* Frameworks */ = {
+		41FE8367381182095F0661C9F49FA7CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41ABAC27C3E725640F32F06739FB7A06 /* Foundation.framework in Frameworks */,
+				C002D2745CA75912F384EA7BF95887DC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,21 +263,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				346E46B2B698DECEC2EBA4A37CBF58AA /* Foundation.framework in Frameworks */,
+				8DD584B6F8F7262473B756443B13FE78 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7592B2E6356EE032FB6AF63EF0E4DCB3 /* Frameworks */ = {
+		FCC0E2627F0C3F94BCCFB76D38F36B2C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0011B1C1BD822D66A00EBFDD62922B2 /* Foundation.framework in Frameworks */,
+				0E48139C36B407B59852E0CC65B59EC3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		084B919E9DCA8150507E8CD52988B2C6 /* monkc */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,104 +288,127 @@
 			sourceTree = "<group>";
 		};
 		1B3F5DB5F1E74E46728BA1BC02651577 /* Pods-monkc_Example */ = {
+=======
+		11CA91A41C73936DC5D62DD9D2920A5F /* Pods-monkc_Example */ = {
+>>>>>>> release/2.0
 			isa = PBXGroup;
 			children = (
-				FF0EE67644924D9ADBC9527C14DF6431 /* Info.plist */,
-				68039EC9D943FF1429D063BC67FB9724 /* Pods-monkc_Example.modulemap */,
-				4271C8A6CB2FE93A06EB331345CA2BF4 /* Pods-monkc_Example-acknowledgements.markdown */,
-				68F4ABC218AB656C931CCC2A54475BA6 /* Pods-monkc_Example-acknowledgements.plist */,
-				B588FC46511C965320A4D4C6B7DCDEFC /* Pods-monkc_Example-dummy.m */,
-				302BA18A33CCA80D54817F49BF4F42C3 /* Pods-monkc_Example-frameworks.sh */,
-				2092ECFEC65C5C296EEED4C5A08022B2 /* Pods-monkc_Example-resources.sh */,
-				7891E3DF4BDA99427DB042CCE56749B9 /* Pods-monkc_Example-umbrella.h */,
-				467F8275294D461B494C82468034EB35 /* Pods-monkc_Example.debug.xcconfig */,
-				1D5AC81D0C9449320496F94EED6A4C08 /* Pods-monkc_Example.release.xcconfig */,
+				111DCF445EE4F11052AD86C5AFDF2982 /* Info.plist */,
+				916FA92DDBADEC87E5F619C6662317F9 /* Pods-monkc_Example.modulemap */,
+				C69EBA9F94C3DBD7B6E9D45F277E7147 /* Pods-monkc_Example-acknowledgements.markdown */,
+				C77EFA544666AD28B1D8257E860E125B /* Pods-monkc_Example-acknowledgements.plist */,
+				D8AF221B116719AA0EF3E1E8889BC33A /* Pods-monkc_Example-dummy.m */,
+				C027D16B34B0720C43830FFE84506F74 /* Pods-monkc_Example-frameworks.sh */,
+				F3CE9CB13E3CE20CB22EF160B54FA479 /* Pods-monkc_Example-resources.sh */,
+				AC066F27DA8442BBE0CE18D43E0E56B5 /* Pods-monkc_Example-umbrella.h */,
+				552C07A68BE052C89659996953DF2FBF /* Pods-monkc_Example.debug.xcconfig */,
+				17902EA5046E031051F7F67175564199 /* Pods-monkc_Example.release.xcconfig */,
 			);
 			name = "Pods-monkc_Example";
 			path = "Target Support Files/Pods-monkc_Example";
 			sourceTree = "<group>";
 		};
-		346C85FDBB8BD5F33A2C57EBBDB7428B /* Pods-monkc_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				07F6A27DC7260598AE01121DC94BEE7A /* Info.plist */,
-				A19D0FEA2CD1F5D7234122A599F724CD /* Pods-monkc_Tests.modulemap */,
-				F5B6538B0BFE9FB307C17A2AE04CE145 /* Pods-monkc_Tests-acknowledgements.markdown */,
-				4435A00734DBB2BBB8196CCF3C96E556 /* Pods-monkc_Tests-acknowledgements.plist */,
-				36C031FC150DE478072F1190E6484249 /* Pods-monkc_Tests-dummy.m */,
-				CE10ADEBBE610D776998933132545E6A /* Pods-monkc_Tests-frameworks.sh */,
-				F4DFD91FED1582B24DA941DE70E60243 /* Pods-monkc_Tests-resources.sh */,
-				4A73BEF04FE0600AD0F9C24FA942A7BF /* Pods-monkc_Tests-umbrella.h */,
-				EC9DFF27AE75D629FB7F966CEB771613 /* Pods-monkc_Tests.debug.xcconfig */,
-				279F930A3A20F56474A24BD2105CB432 /* Pods-monkc_Tests.release.xcconfig */,
-			);
-			name = "Pods-monkc_Tests";
-			path = "Target Support Files/Pods-monkc_Tests";
-			sourceTree = "<group>";
-		};
 		34CA83D6BEDA57DFB50E7569C36CC410 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1B3F5DB5F1E74E46728BA1BC02651577 /* Pods-monkc_Example */,
-				346C85FDBB8BD5F33A2C57EBBDB7428B /* Pods-monkc_Tests */,
+				11CA91A41C73936DC5D62DD9D2920A5F /* Pods-monkc_Example */,
+				BA74AD3383F914FD5FEF6EDDF2A09DDC /* Pods-monkc_Tests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		4735700AFC324A1B524A12D790FA3B91 /* Support Files */ = {
+		39736B0D5B0C83C90F3A7BADBD3C91D6 /* monkc */ = {
 			isa = PBXGroup;
 			children = (
-				ED779C45595DDFFE3A7F6E081CB894C1 /* Info.plist */,
-				85149C175B7FBC53A686E4FE8A1B3101 /* monkc.modulemap */,
-				FD531B73A0C911A84283FBF75D971965 /* monkc.xcconfig */,
-				D10B10953AA22F968B71E72608F0ECA2 /* monkc-dummy.m */,
-				BBD2FB7F901854B6AA61DCD099C77A2F /* monkc-prefix.pch */,
-				28B723BBBCE306A24FF79CAEC9068D57 /* monkc-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/monkc";
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		7C077537AC985C45F69E18051FC2E24E /* monkc */ = {
-			isa = PBXGroup;
-			children = (
-				084B919E9DCA8150507E8CD52988B2C6 /* monkc */,
-				4735700AFC324A1B524A12D790FA3B91 /* Support Files */,
+				D3119C961F1DF02D6FBC5C1CF8E86898 /* MCArray.c */,
+				3B3F08E1E58E5036E8F26FF74E07AAAE /* MCArray.h */,
+				0FFA24DB45333CFCED7066D87545B8B6 /* MCArrayList.c */,
+				EF6596288A065DCDCAA9B7BEC3F69886 /* MCArrayList.h */,
+				DF631A8CD6F00717B0A27EEFBCC81E5A /* MCBits.c */,
+				5CB29D7A3CD17A10D0AE39C2E2FD0F5F /* MCBits.h */,
+				EC22ED440D6EFC28665BD0D9747EE5F5 /* MCBuffer.c */,
+				F416A1BC96314EBE5843FE44B2CBB919 /* MCBuffer.h */,
+				964CBE2668875237888EE4BD92537EC1 /* MCClock.c */,
+				1E0810C1D82C74237A8D5CA2B8F051E0 /* MCClock.h */,
+				ACA7498CCD9028267A1FB1B8886E7022 /* MCContext.c */,
+				7053279B1719017124AD33F51B9D8D15 /* MCContext.h */,
+				6350B421AF89540A032AFF3FB90DFF44 /* MCException.c */,
+				D37648B79FA544C2355EB11652266066 /* MCException.h */,
+				1D82B0A6EFEEEC869B1F9216587D9EDD /* MCGeometry.c */,
+				7674F8D95CFEDDED9E1CB9B6851D39B1 /* MCGeometry.h */,
+				EA3481FAF81E4494C80C31BFC13B7A28 /* MCGraph.c */,
+				4C62E210B049847B83EE2A8779FCB5B9 /* MCGraph.h */,
+				F147CCEFEF3BAC0AB257EED890D2449B /* MCHeap.c */,
+				F5E2CB2033D5129B783536C6D43347D9 /* MCHeap.h */,
+				CBDBF26936533498231510AA400ED8CA /* MCIO.c */,
+				C869E2E511D351009C7A41A6336E5297 /* MCIO.h */,
+				7003C43C649A552E977EA345FE8A620A /* MCJNI.h */,
+				DF374A07AD3AF9E50BB344175E0B984E /* MCLexer.h */,
+				85CE14498E84FD7718602BCBD2053738 /* MCLinkedList.c */,
+				63BC7D7556CDD9A5C88D693F630214DE /* MCLinkedList.h */,
+				F9459D5F2C11F32A175A362F7B511976 /* MCMap.c */,
+				0D77F8F456ABFDE3EF86A77F1D602900 /* MCMap.h */,
+				F6E7DF8CE80B3E16DEB452D47D74FFF4 /* MCMath.c */,
+				58D05C1A29FF5DCA9E49BAB8C5566AC8 /* MCMath.h */,
+				D11BF33E10D2DB98B76C1D59632F0824 /* MCProcess.c */,
+				760043F35851CB885384708BCACC17D8 /* MCProcess.h */,
+				DDD06A718283C95E1608793DAD73E0F7 /* MCSet.c */,
+				B25AB19CAE42BCDB04DB9D0ADA462321 /* MCSet.h */,
+				2D0C543679870E0981636A4F8B2D79C9 /* MCSocket.c */,
+				182695A50316A9CFFAB64EDDCEE7DD08 /* MCSocket.h */,
+				2356B1674DC9E97F4D377A5387A9119D /* MCSort.c */,
+				2F8C05FFE169DF9274C536F93EA4A666 /* MCSort.h */,
+				193FE70590D411A2A9E2917D771B86C7 /* MCString.c */,
+				9599099CEAF7FB504C4370234676EFD6 /* MCString.h */,
+				631742481B2C4505E145F0758963B70B /* MCThread.c */,
+				E37097C582D97042CF5F537F9C738915 /* MCThread.h */,
+				2B46B1704A4C81E43B15AC46EB71177D /* MCTree.c */,
+				5CB1D619F0EB6B8A00892F6BE7162D6D /* MCTree.h */,
+				51FFC12B518FD0E907EFE33FA8E1F1EF /* MCUnitTest.c */,
+				5CD13477D4846E044ABA21CA7090338D /* MCUnitTest.h */,
+				42788A2D527C137794F0760D3C474F2F /* monkc.c */,
+				853FF62AA95C35153D1E40C1FDE9BC97 /* monkc.h */,
+				F901DA38239BB7E49CA398A27160E7D6 /* monkc_export.h */,
+				535CAFBB9B202F2151C6A4ED202601A6 /* Pod */,
+				AE8C224A0E34FC8050690CB2D288FA5E /* Support Files */,
 			);
 			name = monkc;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		535CAFBB9B202F2151C6A4ED202601A6 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				AC1A4067204CEC144A008898F62F2A68 /* LICENSE */,
+				50A87D9EDEBB4B05CF1640E714578564 /* monkc.podspec */,
+				B51CE1E134F5D1B300ED6CAB415D1ED8 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				A0EC3A94512F0B2308973A13428D8038 /* Development Pods */,
+				A6BFBE1FBD574D06167D46620934575F /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				B2C544974B5C31D42C8B243AD84C0085 /* Products */,
 				34CA83D6BEDA57DFB50E7569C36CC410 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A0EC3A94512F0B2308973A13428D8038 /* Development Pods */ = {
+		A6BFBE1FBD574D06167D46620934575F /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7C077537AC985C45F69E18051FC2E24E /* monkc */,
+				39736B0D5B0C83C90F3A7BADBD3C91D6 /* monkc */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		A96E8DA724CB1723827DA104A388E53C /* Classes */ = {
+		AE8C224A0E34FC8050690CB2D288FA5E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				8308C5D58AF9732566AEFC6C8B60F0C6 /* MCArray.c */,
 				9C9D09381C1AD559224245B95FDAC1E9 /* MCArray.h */,
 				82A66E14DB3BE7C3A83A0E06A7BBBA00 /* MCArrayLinkedList.c */,
@@ -337,6 +457,17 @@
 				F40A269D8F4840C068D352966ED9960C /* monkc.h */,
 			);
 			path = Classes;
+=======
+				7A3564433DB7928F881F9C66B0BB825B /* Info.plist */,
+				D4F1CC8479C77A23C1833FD6D09FA380 /* monkc.modulemap */,
+				DF708E0E054265278589CD89D28A64BE /* monkc.xcconfig */,
+				B500E79EC470348CA4471C3AB8FE3DE9 /* monkc-dummy.m */,
+				8D916F0C21B70D1F1A3C3BE738925628 /* monkc-prefix.pch */,
+				6E6785B62BF13D4C21BF055BA4B0B43A /* monkc-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/monkc";
+>>>>>>> release/2.0
 			sourceTree = "<group>";
 		};
 		B2C544974B5C31D42C8B243AD84C0085 /* Products */ = {
@@ -349,17 +480,77 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BA74AD3383F914FD5FEF6EDDF2A09DDC /* Pods-monkc_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0CA2C727A8AB426312891700590F09F9 /* Info.plist */,
+				661992F8A2AF191426720CA91CC85CDA /* Pods-monkc_Tests.modulemap */,
+				33AF70B6AE372296FF2B8AF552BFF302 /* Pods-monkc_Tests-acknowledgements.markdown */,
+				543EB817956FDDE98CD5A14F1907D82B /* Pods-monkc_Tests-acknowledgements.plist */,
+				54262188D318BA3C36C1CE75366E6A3C /* Pods-monkc_Tests-dummy.m */,
+				464645F9D52B14CB1F294869B1BF5140 /* Pods-monkc_Tests-frameworks.sh */,
+				26622E72B92F9F40B11496E3E524DA70 /* Pods-monkc_Tests-resources.sh */,
+				A12C9FC34F0BA7340994AB0C1767D6A6 /* Pods-monkc_Tests-umbrella.h */,
+				3ACA134D1A3D969ADD09C3536ABA2B21 /* Pods-monkc_Tests.debug.xcconfig */,
+				F37B49AE4F3E10FA192218CC9E6523CE /* Pods-monkc_Tests.release.xcconfig */,
+			);
+			name = "Pods-monkc_Tests";
+			path = "Target Support Files/Pods-monkc_Tests";
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		36026D740927A5488A13DEEF570ABD5F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B61D89834F0F511EA55D3CA0006F9F11 /* MCArray.h in Headers */,
+				023F4D8E9C0CD54DA44AEA12043F2403 /* MCArrayList.h in Headers */,
+				64703CD28F9CF3EB30FF2A5535501994 /* MCBits.h in Headers */,
+				390C2226BB4778FAD6AB9C4179D4AEB9 /* MCBuffer.h in Headers */,
+				22D2D76F30658744B6D9F6EB27918D26 /* MCClock.h in Headers */,
+				CC6A849F6A184CC4F71F17684B599E0E /* MCContext.h in Headers */,
+				DAFABD97FBB06ECC7B80FD3856ED6CFC /* MCException.h in Headers */,
+				FBCD7AA3645F66963EB95B2F4A099206 /* MCGeometry.h in Headers */,
+				121C6882EE917263D10C77B7BA7F52BF /* MCGraph.h in Headers */,
+				7E0415F90C4A06B2C1684C23C36B87CC /* MCHeap.h in Headers */,
+				8356E59E7D1D62D863C4233DFCA5A8E0 /* MCIO.h in Headers */,
+				7FE9256D6E7FA0BE70BDF11F69486FFA /* MCJNI.h in Headers */,
+				019CC459C33FAAE6C0DA61E8AD8C94AD /* MCLexer.h in Headers */,
+				B5EDE0DFEB411175A22BE8868B7A6B8B /* MCLinkedList.h in Headers */,
+				AB851389C2885578FC14FD59D6659759 /* MCMap.h in Headers */,
+				EEA5F93A1BA7AFC74B0775AE4617D6B8 /* MCMath.h in Headers */,
+				60FEC724ED55702B3B12324B16475EFA /* MCProcess.h in Headers */,
+				A958F3F911693B11DF9FE6893F1DC01E /* MCSet.h in Headers */,
+				05B67C1B5B5BE2AA7ECB3344820C3256 /* MCSocket.h in Headers */,
+				CB9382ABB50A82A64D4B21B8F70275D9 /* MCSort.h in Headers */,
+				94DFF03A67F4AA882185B8B4F7EEE6F6 /* MCString.h in Headers */,
+				9CEC1BE57705C714795A63C9F81DFE25 /* MCThread.h in Headers */,
+				8A6455CBCF588A33D2DB306D52E5AD5D /* MCTree.h in Headers */,
+				EF4690A8D8F432DB141BEAC17BB27D4B /* MCUnitTest.h in Headers */,
+				8AF845AE83176D8D8B5B519CFAE2EBAD /* monkc-umbrella.h in Headers */,
+				D0B864E2781C74E77F544E7C6D2BB60E /* monkc.h in Headers */,
+				6BBFC04351CAA9A992BCD6473BA14B40 /* monkc_export.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40AAD20FB0B02F60B16F0DCB6066767B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,66 +559,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		424B020902171427046724AB6387888E /* Headers */ = {
+		8C031F09488ED314044C29050CB47C1D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09DFB52395438A7D3D13054DD8E1FE3A /* MCArray.h in Headers */,
-				CACD7D387FABC2F332E0C5B140193E73 /* MCArrayLinkedList.h in Headers */,
-				A5DD312300D372FD570F6D6F4A434214 /* MCBits.h in Headers */,
-				5CC0B37C0A3ACCB897F51DCA3B200540 /* MCBuffer.h in Headers */,
-				223EFF5519848888A5F57130A8D42947 /* MCClock.h in Headers */,
-				57893747A52365614DC2E8A48BC24AA4 /* MCContext.h in Headers */,
-				BEC831CD2FC0C6A335C6AFDE70E10472 /* MCException.h in Headers */,
-				55945B16F430B1B4A24472B05D4F5038 /* MCGeometry.h in Headers */,
-				247703E7A480910717B74D11C4557994 /* MCGraph.h in Headers */,
-				CA8BDEC5DC2903EDF8627B13A08DD547 /* MCHeap.h in Headers */,
-				F7C15C4DE7479017EB7F29BC60D9665C /* MCIO.h in Headers */,
-				5347A8760A2337EBF15D205F1D27BDA0 /* MCJNI.h in Headers */,
-				CBFDCCE76B791719E464EF734A393BEE /* MCLexer.h in Headers */,
-				C0976FCC5F4C535D1FA68AF3B225E86E /* MCLinkedList.h in Headers */,
-				6939D951C3B897CDA1FEC883D2EAE8DE /* MCMath.h in Headers */,
-				93DDA454A09A9AD65823F37D0C451EC6 /* MCProcess.h in Headers */,
-				FBB3EB4A5E18F7DC0595D41411C366E8 /* MCSet.h in Headers */,
-				BC721E77682B1B0D57B0CB1F97184805 /* MCSocket.h in Headers */,
-				07787C11382E52B08E7A901314E46422 /* MCSort.h in Headers */,
-				A698E7DF25332B7B79FAB1D72F8E57C5 /* MCString.h in Headers */,
-				B0E21878237A6C05DEE5CA4F1D2A361D /* MCThread.h in Headers */,
-				2460536C210AE96ACD5B4730E4575A6C /* MCTree.h in Headers */,
-				82A5F6192741D0179991EC196147F64D /* MCUnitTest.h in Headers */,
-				F5BDE68283FE5D46ACE983DFD4E49F52 /* monkc-umbrella.h in Headers */,
-				D96661313935A20C7149A213E992E6A8 /* monkc.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4A30EA27F2C5C9AEF2B6232FBB156AC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18BF8CD69B9953E2C32A331CB9498A0E /* Pods-monkc_Tests-umbrella.h in Headers */,
+				6FEC14297FE67B8C94781667A376DDA2 /* Pods-monkc_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		079A3F9EAE7CFD5AA4E35E6AC91CDA3A /* monkc */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7650B3B65374868A3D03E784885FFB11 /* Build configuration list for PBXNativeTarget "monkc" */;
-			buildPhases = (
-				9ABD0D7194DF92713AE61CB9B9B41F8E /* Sources */,
-				7592B2E6356EE032FB6AF63EF0E4DCB3 /* Frameworks */,
-				424B020902171427046724AB6387888E /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = monkc;
-			productName = monkc;
-			productReference = 21C972CC73355C74F4563BD7C65AA78D /* monkc.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		0908AC3891199051379C8D4CD16D19FA /* Pods-monkc_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42766790C0888D4A89554B304AFC0ED0 /* Build configuration list for PBXNativeTarget "Pods-monkc_Example" */;
@@ -446,17 +588,35 @@
 			productReference = 88122F38460088C3950DB28EB0DA2999 /* Pods_monkc_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B24A34CA563E95694DA7F3FDA8B25F26 /* Pods-monkc_Tests */ = {
+		0A797900572D79D27D8BD7E3B0B13DBF /* monkc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C84F8A6770DDD74CF7358C594E3A0FF /* Build configuration list for PBXNativeTarget "Pods-monkc_Tests" */;
+			buildConfigurationList = B0DC308F4C5D9C50D0E07CC25321267F /* Build configuration list for PBXNativeTarget "monkc" */;
 			buildPhases = (
-				04A3948D7539712143DB5459CC7D3E91 /* Sources */,
-				69B676B54875CAE4EFDC71C033C41562 /* Frameworks */,
-				A4A30EA27F2C5C9AEF2B6232FBB156AC /* Headers */,
+				D8771F57E2ED3D05B37B8F460016B415 /* Sources */,
+				FCC0E2627F0C3F94BCCFB76D38F36B2C /* Frameworks */,
+				36026D740927A5488A13DEEF570ABD5F /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = monkc;
+			productName = monkc;
+			productReference = 21C972CC73355C74F4563BD7C65AA78D /* monkc.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0C3CA42F55AF6D8D6D2D0BB1534E6C04 /* Pods-monkc_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33B6137B9F1A215EDC289D62D078F266 /* Build configuration list for PBXNativeTarget "Pods-monkc_Tests" */;
+			buildPhases = (
+				3945A46A574F43B6552317623BD2965F /* Sources */,
+				41FE8367381182095F0661C9F49FA7CF /* Frameworks */,
+				8C031F09488ED314044C29050CB47C1D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2D9E3DEE4AF57653756EC93EA789126 /* PBXTargetDependency */,
 			);
 			name = "Pods-monkc_Tests";
 			productName = "Pods-monkc_Tests";
@@ -469,8 +629,13 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+<<<<<<< HEAD
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0900;
+=======
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+>>>>>>> release/2.0
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -484,19 +649,19 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				079A3F9EAE7CFD5AA4E35E6AC91CDA3A /* monkc */,
+				0A797900572D79D27D8BD7E3B0B13DBF /* monkc */,
 				0908AC3891199051379C8D4CD16D19FA /* Pods-monkc_Example */,
-				B24A34CA563E95694DA7F3FDA8B25F26 /* Pods-monkc_Tests */,
+				0C3CA42F55AF6D8D6D2D0BB1534E6C04 /* Pods-monkc_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		04A3948D7539712143DB5459CC7D3E91 /* Sources */ = {
+		3945A46A574F43B6552317623BD2965F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E757C9B0D15A6158E59F074B9154A88A /* Pods-monkc_Tests-dummy.m in Sources */,
+				970A383FD4200C852B0E665898185DF8 /* Pods-monkc_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,33 +673,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9ABD0D7194DF92713AE61CB9B9B41F8E /* Sources */ = {
+		D8771F57E2ED3D05B37B8F460016B415 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52EE6051659800E413B5B8DBD3558D83 /* MCArray.c in Sources */,
-				BF38FD84A1CD70798FFBB1B94B17A562 /* MCArrayLinkedList.c in Sources */,
-				7B1697CFBA9581916BF71E6490271B7B /* MCBits.c in Sources */,
-				0C1D6B5293AEE4EB4D5B800602F9010C /* MCBuffer.c in Sources */,
-				F728A89467AD80113AA6246AC234CADE /* MCClock.c in Sources */,
-				9CAC79A4AA8D51CED6B8E10239FDCB1B /* MCContext.c in Sources */,
-				D079FEA02F280657552EAADD44377141 /* MCException.c in Sources */,
-				1508937C6B0DB5436C986CA43262A75A /* MCGeometry.c in Sources */,
-				0E4D80EE3C514486A1C9B634E8D30FAF /* MCGraph.c in Sources */,
-				9A66494C16592CA9EDA9BE67D391D51F /* MCHeap.c in Sources */,
-				C425E3BE9291516BA6C241F2582756E7 /* MCIO.c in Sources */,
-				970632EC70C79BC507490AA31AEDE198 /* MCLinkedList.c in Sources */,
-				C155B49D2DF4C93D06CE7C3D68D106AD /* MCMath.c in Sources */,
-				6E5A2FF20194711437927B9A4CD01BFA /* MCProcess.c in Sources */,
-				3020B649CB19009685D946EE7D9036CF /* MCSet.c in Sources */,
-				EA05EA20A1BC878D3E95C63BC87A258F /* MCSocket.c in Sources */,
-				3A3251DBD6B26F3A9DF818A1FA1C56D8 /* MCSort.c in Sources */,
-				F9119B6B9FE191EEA91D1F40E47277BC /* MCString.c in Sources */,
-				850EE63F60289052CACD0A1DDE3EC7CD /* MCThread.c in Sources */,
-				2C6D4C8097BED228BDFD0EA7DD9CAD93 /* MCTree.c in Sources */,
-				AA11B7BD3D7667AA81E68A5F6D20286B /* MCUnitTest.c in Sources */,
-				C2628CC9ADD3255E03ADB54EFD53A1EF /* monkc-dummy.m in Sources */,
-				05B3C23FACCD4F102520AF1FB0D145DF /* monkc.c in Sources */,
+				9A3D98C31026064EFADF07D2E6DD70B9 /* MCArray.c in Sources */,
+				5C00DEBC5B9D6F8928982F591658A2D5 /* MCArrayList.c in Sources */,
+				605640B67CF02C8A4FC0C37A98BE16DF /* MCBits.c in Sources */,
+				1E40668570E0657A47919123095E2F9F /* MCBuffer.c in Sources */,
+				E9BA3D294F426BBED58F2FAE90FF9575 /* MCClock.c in Sources */,
+				DC696B299AF552346515EAF020272B53 /* MCContext.c in Sources */,
+				A4C4B5ECD8195234DE84BD3BBB4613EE /* MCException.c in Sources */,
+				440F41EEDD1F89FB7E3CA2D5858920BB /* MCGeometry.c in Sources */,
+				1835B5B8A12E8D9E8F95BE3EB8A425A5 /* MCGraph.c in Sources */,
+				3E8F8C6AC01EB063DAAE20E1B53C3F3D /* MCHeap.c in Sources */,
+				2E9CA2C6F0D356BBE3DCD686F956B80C /* MCIO.c in Sources */,
+				D3C57EFAF97111382EB8EDABFC595402 /* MCLinkedList.c in Sources */,
+				FEE69662CD5F20C6087E86ABD4113600 /* MCMap.c in Sources */,
+				FF19527445BFE9CFD956CF1A482B7258 /* MCMath.c in Sources */,
+				1DFD23D9405F063AEC28801290CC2A30 /* MCProcess.c in Sources */,
+				AD416822CD06407CA88A2EBDE1D324F8 /* MCSet.c in Sources */,
+				C705333E4D81E3E3497B7124B45A35E3 /* MCSocket.c in Sources */,
+				43306917B1867C5F460B949955678DD3 /* MCSort.c in Sources */,
+				4C29597FFE31DECAA052352C82CB771C /* MCString.c in Sources */,
+				AD9DB6B65D82A7176DC26975B7E1BBBF /* MCThread.c in Sources */,
+				F0E7B5A87CB23B1CC5A66BB826A4E9A9 /* MCTree.c in Sources */,
+				88B8802F60EA0B1F269791268B260CCB /* MCUnitTest.c in Sources */,
+				2CE82046CD8A4F57471C01DEAA096FFF /* monkc-dummy.m in Sources */,
+				6FF6B9ACD0A6125CE250A1A442EDF0B6 /* monkc.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,115 +710,175 @@
 		69112D6CBF4713BADCDD6371D8699CEE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = monkc;
-			target = 079A3F9EAE7CFD5AA4E35E6AC91CDA3A /* monkc */;
+			target = 0A797900572D79D27D8BD7E3B0B13DBF /* monkc */;
 			targetProxy = CB71765126852DC46641A9D4EC31F883 /* PBXContainerItemProxy */;
+		};
+		F2D9E3DEE4AF57653756EC93EA789126 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-monkc_Example";
+			target = 0908AC3891199051379C8D4CD16D19FA /* Pods-monkc_Example */;
+			targetProxy = B389B54CE738E7D889648BCDD8ABB65C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0F7A1F87CE7476BDA613C603704BDF8B /* Debug */ = {
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC9DFF27AE75D629FB7F966CEB771613 /* Pods-monkc_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		758FF6140FEEF590971A433D6162D3C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF708E0E054265278589CD89D28A64BE /* monkc.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-monkc_Tests/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/monkc/monkc-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/monkc/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-monkc_Tests/Pods-monkc_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_monkc_Tests;
+				MODULEMAP_FILE = "Target Support Files/monkc/monkc.modulemap";
+				PRODUCT_MODULE_NAME = monkc;
+				PRODUCT_NAME = monkc;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		2C717F2842A87F3BE9471F31EDBBB6DD /* Release */ = {
+		7A6B7483F631F5E3135CD5077B79A2D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D5AC81D0C9449320496F94EED6A4C08 /* Pods-monkc_Example.release.xcconfig */;
+			baseConfigurationReference = F37B49AE4F3E10FA192218CC9E6523CE /* Pods-monkc_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-monkc_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-monkc_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-monkc_Example/Pods-monkc_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MODULEMAP_FILE = "Target Support Files/Pods-monkc_Tests/Pods-monkc_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_monkc_Example;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		73175D719FC7146D0D6FA0A1C38F9D41 /* Debug */ = {
+		89103BE5FCFEDD0E6FF80CB85C9AA7A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 467F8275294D461B494C82468034EB35 /* Pods-monkc_Example.debug.xcconfig */;
+			baseConfigurationReference = DF708E0E054265278589CD89D28A64BE /* monkc.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-monkc_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/monkc/monkc-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/monkc/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-monkc_Example/Pods-monkc_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_monkc_Example;
+				MODULEMAP_FILE = "Target Support Files/monkc/monkc.modulemap";
+				PRODUCT_MODULE_NAME = monkc;
+				PRODUCT_NAME = monkc;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
+<<<<<<< HEAD
 			name = Debug;
 		};
 		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
@@ -760,94 +986,69 @@
 			name = Debug;
 		};
 		A20D6C21654C65ED9C8BB1E098F900AF /* Release */ = {
+=======
+			name = Release;
+		};
+		A283AD1C2D08B606F07FB8D89875E99C /* Release */ = {
+>>>>>>> release/2.0
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 279F930A3A20F56474A24BD2105CB432 /* Pods-monkc_Tests.release.xcconfig */;
+			baseConfigurationReference = 17902EA5046E031051F7F67175564199 /* Pods-monkc_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-monkc_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-monkc_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-monkc_Tests/Pods-monkc_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MODULEMAP_FILE = "Target Support Files/Pods-monkc_Example/Pods-monkc_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_monkc_Tests;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		C36AC4FB7F389C6ECAE7E864C013F6C2 /* Release */ = {
+		C99A8B7C76421789C598DE4518148822 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD531B73A0C911A84283FBF75D971965 /* monkc.xcconfig */;
+			baseConfigurationReference = 552C07A68BE052C89659996953DF2FBF /* Pods-monkc_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/monkc/monkc-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/monkc/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-monkc_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/monkc/monkc.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = monkc;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CEBCCAEAF48175ADEA40E8C838F45F77 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD531B73A0C911A84283FBF75D971965 /* monkc.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/monkc/monkc-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/monkc/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/monkc/monkc.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = monkc;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-monkc_Example/Pods-monkc_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -856,14 +1057,114 @@
 			};
 			name = Debug;
 		};
+		EFDE407460A754ECEDECACE64742764F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ACA134D1A3D969ADD09C3536ABA2B21 /* Pods-monkc_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-monkc_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-monkc_Tests/Pods-monkc_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
-				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33B6137B9F1A215EDC289D62D078F266 /* Build configuration list for PBXNativeTarget "Pods-monkc_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFDE407460A754ECEDECACE64742764F /* Debug */,
+				7A6B7483F631F5E3135CD5077B79A2D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -871,26 +1172,17 @@
 		42766790C0888D4A89554B304AFC0ED0 /* Build configuration list for PBXNativeTarget "Pods-monkc_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				73175D719FC7146D0D6FA0A1C38F9D41 /* Debug */,
-				2C717F2842A87F3BE9471F31EDBBB6DD /* Release */,
+				C99A8B7C76421789C598DE4518148822 /* Debug */,
+				A283AD1C2D08B606F07FB8D89875E99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7650B3B65374868A3D03E784885FFB11 /* Build configuration list for PBXNativeTarget "monkc" */ = {
+		B0DC308F4C5D9C50D0E07CC25321267F /* Build configuration list for PBXNativeTarget "monkc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEBCCAEAF48175ADEA40E8C838F45F77 /* Debug */,
-				C36AC4FB7F389C6ECAE7E864C013F6C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7C84F8A6770DDD74CF7358C594E3A0FF /* Build configuration list for PBXNativeTarget "Pods-monkc_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0F7A1F87CE7476BDA613C603704BDF8B /* Debug */,
-				A20D6C21654C65ED9C8BB1E098F900AF /* Release */,
+				758FF6140FEEF590971A433D6162D3C8 /* Debug */,
+				89103BE5FCFEDD0E6FF80CB85C9AA7A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

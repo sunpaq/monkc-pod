@@ -8,7 +8,23 @@
 
 #include <stdio.h>
 #include "MCGeometry.h"
-#include "MCArrayLinkedList.h"
+#include "MCArrayList.h"
+
+MCPolygonPrimitives MCPolygonPrimitivesDetect(MCVector3 v1, MCVector3 v2, MCVector3 v3, MCVector3 v4)
+{
+    MCVector3 n1 = MCNormalOfTriangle(v1, v2, v3);
+    MCVector3 n2 = MCNormalOfTriangle(v1, v3, v4);
+    if(MCVector3Dot(n1, n2) >= 0) {
+        return MCPolygonFan;
+    }
+    
+    MCVector3 n3 = MCNormalOfTriangle(v3, v2, v4);
+    if (MCVector3Dot(n1, n3) >= 0) {
+        return MCPolygonStrip;
+    }
+
+    return MCPolygonUnknown;
+}
 
 MCPolygonPrimitives MCPolygonPrimitivesDetect(MCVector3 v1, MCVector3 v2, MCVector3 v3, MCVector3 v4)
 {
@@ -98,7 +114,7 @@ MCPolygon* MCPolygonInit(MCPolygon* poly, MCVector3 vertexes[], size_t count)
     
     if (poly->convexCount < 3 ) {
         error_log("poly have no convex hull!");
-        exit(-1);
+        //exit(-1);
     }
     
     if (poly->concaveCount == 0) {

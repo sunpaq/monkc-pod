@@ -1,5 +1,5 @@
 /*
- Copyright (c) <2013-2016>, <Sun Yuli>
+ Copyright (c) <2013-2018>, <Sun Yuli>
  All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
@@ -233,7 +233,7 @@ void unlock_global_classtable()
  for method binding
  */
 
-MCHashTableIndex _binding(mc_class* const aclass, const char* methodname, MCFuncPtr value)
+MCHashTableIndex _bid(mc_class* const aclass, const char* methodname, MCFuncPtr value)
 {
     if(aclass==null){
         error_log("_binding_h(mc_class* aclass) aclass is nill return 0\n");
@@ -468,8 +468,9 @@ mc_hashitem* new_item(const char* key, MCGeneric value, MCHash hashval)
     if (aitem != null) {
         aitem->next = null;
         aitem->hash = hashval;
-        strncpy(aitem->key, key, strlen(key));
-        aitem->key[MAX_KEY_CHARS-1] = NUL;
+        size_t len = strlen(key);
+        strncpy(aitem->key, key, len);
+        aitem->key[len] = NUL;
         //aitem->key = key;
         aitem->value = value;
         return aitem;
@@ -485,7 +486,9 @@ static MCBool override_samekeyitem(mc_hashitem* item, mc_hashitem* newitem, cons
         //replace
         item->value = newitem->value;
         item->hash  = newitem->hash;
-        strncpy(item->key, classname, strlen(classname));
+        size_t len = strlen(classname);
+        strncpy(item->key, classname, len);
+        item->key[len] = NUL;
         //free the new item!
         runtime_log("[%s]:override-item[%d/%s]\n", classname, item->hash, item->key);
         free(newitem);
@@ -554,7 +557,7 @@ mc_hashitem* get_item_byhash(mc_hashtable* const table_p, const MCHash hashval, 
         return null;
     }
     //look up in cache
-    if (table_p->cache_count > 0) {
+    if (table_p->cache_count > 0 && table_p->cache_count < MAX_ITEM_CACHE) {
         for (int i=0; i<MAX_ITEM_CACHE; i++) {
             mc_hashitem* item = table_p->cache[i];
             if (item && item->hash == hashval) {
@@ -567,6 +570,11 @@ mc_hashitem* get_item_byhash(mc_hashtable* const table_p, const MCHash hashval, 
                 //debug_log("key hit a cached item [%s]\n", refkey);
                 return item;
             }
+        }
+    } else {
+        table_p->cache_count = 0;
+        for (int i=0; i<MAX_ITEM_CACHE; i++) {
+            table_p->cache[i] = null;
         }
     }
     //level<MCHashTableLevelMax
@@ -598,7 +606,7 @@ mc_hashitem* get_item_byhash(mc_hashtable* const table_p, const MCHash hashval, 
         //compare hash
         if (res->hash == hashval) {
             //cache
-            if (table_p->cache_count < MAX_ITEM_CACHE) {
+            if (table_p->cache_count >=0 && table_p->cache_count < MAX_ITEM_CACHE) {
                 table_p->cache[table_p->cache_count++] = res;
             } else {
                 table_p->cache_count = 0;
@@ -930,12 +938,12 @@ MCObject* MCObject_init(MCObject* const obj)
  
  infos about ARM 32 platform (armv6 armv7):
  
- stack-align:     method(8byte) non-method(4byte)
+ stack-align:     fun(8byte) non-fun(4byte)
  frame-pointer:  fp is r11 in ARM mode / r7 in thumb mode
  keep-fp:        -mapcs-frame will keep the fp not to be optimized out
  
  iOS exception:
- stack-align:     method(4byte)
+ stack-align:     fun(4byte)
  
  infos about ARM 64 platform (arm64):
  
@@ -980,7 +988,7 @@ MCObject* MCObject_init(MCObject* const obj)
  and keep the code runable on old device
  */
 
-#ifndef __ANDROID__
+
 
 #ifndef asm
 #define asm __asm__
@@ -1090,7 +1098,3 @@ asm("0:");
 asm("blr");
 #endif
 #endif
-
-#endif
-
-

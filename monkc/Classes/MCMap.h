@@ -12,9 +12,12 @@
 #include "monkc.h"
 
 class(MCMap, MCObject,
-      mc_hashtable* table);
+      mc_hashtable* table;
+      computing(MCHashTableSize, itemsCount));
 
-method(MCMap, void, setValueForKey, MCGeneric value, const char* key);
-method(MCMap, void, getValueForKey, MCGeneric* result, const char* key);
+fun(MCMap, void, bye, voida);
+fun(MCMap, void, setValueForKey, MCGeneric value, const char* key);
+fun(MCMap, void, getValueForKey, MCGeneric* result, const char* key);
+fun(MCMap, void, getValueByIndex, MCGeneric* result, MCHashTableIndex index);
 
 #endif /* MCMap_h */
